@@ -1,0 +1,33 @@
+Données souhaitées pour chaque produit alimentaire
+
+
+Caractéristiques
+code
+nom
+quantité
+marque
+catégorie
+pays
+
+
+Composition
+liste des ingrédients
+liste des additifs
+
+
+Informations nutritionnelles
+nutri Score (entre A et E)
+énergie
+matières grasses
+matières grasses saturées
+glucides
+fibres alimentaires
+sucres
+protéines
+sel
+
+liste des sels minéraux (potassium, magnésium, etc.)
+
+liste des vitamines
+
+iste des allergènes
