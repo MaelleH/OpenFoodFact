@@ -75,12 +75,12 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => '',
-	'password' => '',
-	'database' => '',
-	'dbdriver' => 'mysqli',
-	'dbprefix' => '',
+	'hostname' => 'servbdd',
+	'username' => 'heyrenmi',
+	'password' => 'Mayoti22',
+	'database' => 'pg_heyrenmi',
+	'dbdriver' => 'postgre',
+	'dbprefix' => 'openfoodfacts',
 	'pconnect' => FALSE,
 	'db_debug' => (ENVIRONMENT !== 'production'),
 	'cache_on' => FALSE,
