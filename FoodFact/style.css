@@ -1,0 +1,63 @@
+/* général */
+body {
+  font: 13px/20px normal Helvetica, Arial, sans-serif;
+  color: #440055;
+  background: url(../img/friends.jpg);
+  margin: 0;
+  padding: 0;
+}
+
+/* formulaires */
+form {
+ padding: 10px;
+ margin: auto;
+ max-width: 280px;
+}
+
+fieldset {
+ padding: 0 20px 20px 20px;
+ margin-bottom: 10px;
+ border: 1px solid #222210;
+}
+
+legend {
+ font-weight: bold;
+}
+
+label {
+ margin-top: 10px;
+ display: block;
+}
+
+label.inline {
+ display: inline;
+ margin-right: 50px;
+}
+
+button{
+  color: #19FF9B;
+  right: 20px;
+  position: absolute;
+}
+input, textarea, select {
+ padding: 3px;
+ border-radius: 5px;
+ width: 200px;
+}
+
+select {
+ margin-top: 10px;
+}
+
+input[type=radio] {
+ background-color: transparent;
+ border: none;
+ width: 10px;
+}
+
+input[type=submit], input[type=reset] {
+ width:100px;
+ margin-left:5px;
+ cursor:pointer;
+}
+
