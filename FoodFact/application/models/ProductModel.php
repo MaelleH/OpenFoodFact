@@ -13,14 +13,13 @@ class productModel extends CI_Model {
 			}
 			$req=$req."id_produit=? ";
 			$recherche[]=$crit['code'];
-		}		
+		}
 			
 		if(isset($crit['nom'])){
 			if(!($req === "select * from openfoodfacts._produit where ")){
 				$req = $req."and ";
 			}
-			$req=$req."product_name=? ";
-			$recherche[]=$crit['nom'];
+			$req=$req."UPPER(product_name) LIKE UPPER('%".$crit['nom']."%') ";
 		}
 		
 		if(isset($crit['marque'])){
@@ -35,7 +34,7 @@ class productModel extends CI_Model {
 			if(!($req === "select * from openfoodfacts._produit where ")){
 				$req = $req."and ";
 			}
-			$req=$req."countries_fr=? ";
+			$req=$req."id_produit in (select id_produit from openfoodfacts._payscommercialiseproduit where pays= ? )";
 			$recherche[]=$crit['pays'];
 		}
 		
@@ -163,7 +162,16 @@ class productModel extends CI_Model {
 			$ifex = $this->db->query("select * from openfoodfacts._produit");
 		}
 		
+		echo $req;
+
+		print_r($recherche);
+
 		return $ifex->row_array();
 	}
-	
+
+	public function	getAll($page, $limit) {
+		$offset = $page * $limit;
+
+		return $this->db->query("select id_produit, product_name from openfoodfacts._produit limit $limit offset $offset;");
+	}
 }
