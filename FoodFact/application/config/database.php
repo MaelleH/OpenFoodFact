@@ -74,13 +74,14 @@ $active_group = 'default';
 $query_builder = TRUE;
 
 $db['default'] = array(
-	'dsn'	=> '',
-	'hostname' => 'servbdd',
-	'username' => 'papinji',
-	'password' => 'SErplentin22!!',
-	'database' => 'pg_papinji',
+	'dsn'    => '',
+	'hostname' => 'horton.elephantsql.com',
+	'port' => 5432,
+	'username' => 'onxtrzmi',
+	'password' => '702kMBr4QdMcN9GcT8Ld5MDKDfSF5ZLh',
+	'database' => 'onxtrzmi',
 	'dbdriver' => 'postgre',
-	'dbprefix' => 'openfoodfacts',
+	'dbprefix' => 'openfoodfacts.',
 	'pconnect' => FALSE,
 	'db_debug' => (ENVIRONMENT !== 'production'),
 	'cache_on' => FALSE,

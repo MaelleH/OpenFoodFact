@@ -34,11 +34,6 @@ label.inline {
  margin-right: 50px;
 }
 
-button{
-  color: #19FF9B;
-  right: 20px;
-  position: absolute;
-}
 input, textarea, select {
  padding: 3px;
  border-radius: 5px;
