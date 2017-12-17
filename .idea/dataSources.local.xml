@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="bdd antoine off" uuid="6b9c1798-651e-404d-ac66-40c93938cc97">
+      <database-info product="PostgreSQL" version="9.4.1" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.1.1">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
+      <user-name>onxtrzmi</user-name>
+      <introspection-schemas>onxtrzmi:openfoodfacts,public</introspection-schemas>
+    </data-source>
+  </component>
+</project>

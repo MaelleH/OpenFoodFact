@@ -15,7 +15,7 @@ class Produits extends CI_Controller {
 	}
 
 	public function index($offset = 0) {
-		$limit = 5;
+		$limit = 10;
 
 		$data['produits'] = $this->productModel->getAll($offset, $limit);
 

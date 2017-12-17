@@ -189,19 +189,23 @@ class productModel extends CI_Model {
 		$result = [
 			'product' => $this->db->query("select _produit.*, _ingredienttexte.ingredient_text from openfoodfacts._produit left outer join openfoodfacts._ingredienttexte on _produit.id_produit = _ingredienttexte.id_produit where _produit.id_produit = '$id_produit';")->row_array(),
 			'countries' => array_column($this->db->query("select pays from openfoodfacts._payscommercialiseproduit where id_produit = '$id_produit';")->result_array(), 'pays'),
-			'ingredients' => array_column($this->db->query("select ingredients_text from openfoodfacts._ingredientcontenusproduit where id_produit = '$id_produit'")->result_array(), 'ingredients_text'),
+			'ingredients' => array_column($this->db->query("select id_ingredient from openfoodfacts._ingredientcontenusproduit where id_produit = '$id_produit'")->result_array(), 'ingredients_text'),
 			'additifs' => $this->db->query("select id_additif, nom from openfoodfacts._additif natural join openfoodfacts._additifcontenus where id_produit = '$id_produit';")->result_array(),
 			'ref' => $this->db->query("select url, nom as nom_reference from openfoodfacts._reference where id_reference = '$id_produit';")->result_array()
 		];
 
-		function getIngredientsOfIngredient($db, $ingredient) {
-			return array_column($db->query("select ingredients_contenu from openfoodfacts._ingredientcontenusingredient where ingredients_contenant = '$ingredient';")->result_array(), 'ingredients_contenu');
+		function getIngredientByID($db, $ingredientID) {
+			return $db->query("select ingredients_text from openfoodfacts._ingredient where id_ingredient = '$ingredientID';")->row_array()['ingredients_text'];
 		}
 
-		function recupererArbreIngredient($db, $ingredient) {
-			$result = [$ingredient, []];
+		function getIngredientsOfIngredient($db, $ingredientID) {
+			return array_column($db->query("select id_ingredient_contenu from openfoodfacts._ingredientcontenusingredient where id_ingredient_contenant = '$ingredientID';")->result_array(), 'ingredients_contenu');
+		}
 
-			foreach (getIngredientsOfIngredient($db, $ingredient) as $ing) {
+		function recupererArbreIngredient($db, $ingredientID) {
+			$result = [getIngredientByID($db, $ingredientID), []];
+
+			foreach (getIngredientsOfIngredient($db, $ingredientID) as $ing) {
 				$result[1][] = recupererArbreIngredient($db, $ing);
 			}
 

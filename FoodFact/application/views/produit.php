@@ -11,77 +11,136 @@ function afficherIngredients($ingredients) {
 	echo '</ul>';
 }
 
+function afficherAdditifs($additifs) {
+	echo '<table class="table table-striped">';
+	echo '<thead>';
+	echo '<tr>';
+	echo '<th scope="col">Code</th>';
+	echo '<th scope="col">Nom</th>';
+	echo '</tr>';
+	echo '</thead>';
+	echo '<tbody>';
+	foreach ($additifs as $additif):
+		?>
+        <tr>
+            <th scope="row"><?php echo $additif['id_additif']; ?></th>
+            <td><?php echo $additif['nom']; ?></td>
+        </tr>
+	<?php
+	endforeach;
+	echo '</tbody>';
+	echo '</table>';
+}
+
+function afficherTr($nom, $valeur) {
+if (isset($valeur)) {
+?>
+<tr>
+    <th scope="row"><?php echo $nom; ?></th>
+    <td><?php echo $valeur; ?></td>
+</tr>
+<?php
+}
+}
+
 ?><!DOCTYPE html>
 <html lang="fr">
 <head>
+    <title>OpenFoodFacts - Fiche du produit <?php echo $product_name; ?></title>
+
     <meta charset="utf-8">
-	<?php echo link_tag('style.css'); ?>
-    <title>Rechercher</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+
+	<?php echo link_tag('assets/css/froala_blocks.css'); ?>
+	<?php echo link_tag('assets/css/main.css'); ?>
 </head>
 <body>
-<header>
-    <h1>Fiche du produit : <?php echo $product_name; ?></h1>
-</header>
-<main>
-    <fieldset>
-        <legend>Caractéristiques</legend>
-        <label>Code : <?php echo $id_produit; ?></label>
-        <label>Nom : <?php echo $product_name; ?></label>
-        <label>Marque : <?php echo $brands ?? 'inconnu'; ?></label>
-        <label>Portion : <?php echo $serving_size ?? 'inconnu'; ?></label>
-        <label>Pays (<?php echo sizeof($countries); ?>) : <?php echo join(', ', $countries); ?></label>
-    </fieldset>
-    <fieldset>
-        <legend>Composition</legend>
-        <label>Ingrédients :</label>
-		<?php if (isset($ingredient_text)): ?>
-            <pre><?php echo $ingredient_text; ?></pre>
-		<?php elseif (isset($ingredients)): ?>
-			<?php afficherIngredients($ingredients); ?>
-		<?php else: ?>
-            <pre>Non renseignés</pre>
-		<?php endif; ?>
-        <label>Additifs :</label>
-		<?php if (isset($additifs)): ?>
-            <ul>
-				<?php foreach ($additifs as $additif): ?>
-                    <li><strong><?php echo $additif['id_additif']; ?></strong> - <?php echo $additif['nom']; ?></li>
-				<?php endforeach; ?>
-            </ul>
-		<?php else: ?>
-            <pre>Sans</pre>
-		<?php endif; ?>
-    </fieldset>
-    <fieldset>
-        <legend>Informations nutritionnelles</legend>
-        <label for="nutriScore">NutriScore : <?php echo $nutrition_grade_fr ?? 'inconnu' ?></label>
-        <label for="energie">Énergie : <?php echo $energy_100g ?? 'inconnu' ?></label>
-        <label for="matieresGrasses">Matières grasses : <?php echo $fat_100g ?? 'inconnu' ?></label>
-        <label for="matieresGrassesSaturees">Matières grasses Saturées
-            : <?php echo $satured_fat_100g ?? 'inconnu' ?></label>
-        <label for="matieresGrassesTrans">Matières grasses trans : <?php echo $trans_fat_100g ?? 'inconnu' ?></label>
-        <label for="chlolesterol">Cholesterol : <?php echo $cholesterol_100g ?? 'inconnu' ?></label>
-        <label for="carbohydrates">Carbohydrates : <?php echo $carbohydrates_100g ?? 'inconnu' ?></label>
-        <label for="sucres">Sucres : <?php echo $sugars_100g ?? 'inconnu' ?></label>
-        <label for="fibresAlimentaires">fibres Alimentaires max : <?php echo $fibers_100g ?? 'inconnu' ?></label>
-        <label for="proteines">Protéines max : <?php echo $proteins_100g ?? 'inconnu' ?></label>
-        <label for="sel">Sel max : <?php echo $salt_100g ?? 'inconnu' ?></label>
-        <label for="sodium">Sodium : <?php echo $sodium_100g ?? 'inconnu' ?></label>
-        <label for="vitamineA">Vitamine A : <?php echo $vitamin_a_100g ?? 'inconnu' ?></label>
-        <label for="vitamineC">Vitamine C : <?php echo $vitamin_c_100g ?? 'inconnu' ?></label>
-        <label for="calcium">Calcium : <?php echo $calcium_100g ?? 'inconnu' ?></label>
-        <label for="iron">Fer : <?php echo $iron_100g ?? 'inconnu' ?></label>
-        <label for="scorenutritif">Score nutritif : <?php echo $nutrition_score_fr_100g ?? 'inconnu' ?></label>
-    </fieldset>
-    <fieldset>
-        <legend>Informations supplémentaires</legend>
-		<?php if (isset($nom_reference)): ?>
-            <label>Importé par <a href="<?php echo $url; ?>"><?php echo $nom_reference; ?></a></label>
-		<?php endif; ?>
-        <label>Date de création : <?php echo $created_t; ?></label>
-        <label>Date de dernière modification : <?php echo $last_modified_t; ?></label>
-    </fieldset>
-</main>
+<section class="fdb-block pb-0 mb-4" style="background-image: url(/assets/imgs/bg_1.jpg)">
+    <div class="container">
+        <div class="row justify-content-end">
+            <div class="col-12 col-md-8 col-lg-6 text-center">
+                <div class="fdb-box br-0">
+                    <h1><?php echo $product_name; ?></h1>
+                    <p class="text-h3">
+                        Sur cette page vous pouvez lire la fiche détaillée du produit <?php echo $product_name; ?>.
+                    </p>
+                    <p class="mt-4">
+                        <a class="btn" href="<?php echo site_url(''); ?>">Revenir à l’accueil</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1>Caractéristiques</h1>
+            <table class="table table-striped">
+                <tbody>
+				<?php afficherTr('Code', $id_produit); ?>
+				<?php afficherTr('Nom', $product_name); ?>
+				<?php afficherTr('Marque', $brands); ?>
+				<?php afficherTr('Portion', $serving_size); ?>
+				<?php if (sizeof($countries) > 0): ?>
+					<?php afficherTr('Pays (' . sizeof($countries) . ')', join(', ', $countries)); ?>
+				<?php endif; ?>
+                </tbody>
+            </table>
+
+            <h1>Composition</h1>
+            <h2>Ingrédients</h2>
+			<?php if (isset($ingredient_text)): ?>
+                <p><?php echo $ingredient_text; ?></p>
+			<?php elseif (isset($ingredients)): ?>
+				<?php afficherIngredients($ingredients); ?>
+			<?php else: ?>
+                <p>Non renseignés</p>
+			<?php endif; ?>
+
+            <h2>Additifs</h2>
+			<?php if (isset($additifs)): ?>
+				<?php afficherAdditifs($additifs); ?>
+			<?php else: ?>
+                <p>Pas d’additifs</p>
+			<?php endif; ?>
+
+            <h1>Informations supplémentaires</h1>
+            <table class="table table-striped">
+				<?php if (isset($nom_reference)): ?>
+					<?php afficherTr('Importé de', '<a href="' . $url . '">' . $nom_reference . '</a>'); ?>
+				<?php endif; ?>
+				<?php afficherTr('Date de création', $created_t); ?>
+				<?php afficherTr('Date de dernière modification', $last_modified_t); ?>
+            </table>
+        </div>
+        <div class="col">
+            <h1>Informations nutritionnelles</h1>
+
+            <table class="table table-striped">
+				<?php afficherTr('NutriScore', '<img src="https://static.openfoodfacts.org/images/misc/nutriscore-' .strtolower($nutrition_grade_fr) . '.svg" class="img-fluid">'); ?>
+				<?php afficherTr('Énergie', $energy_100g); ?>
+				<?php afficherTr('Graisse', $fat_100g); ?>
+				<?php afficherTr('Graisse saturées', $satured_fat_100g); ?>
+				<?php afficherTr('Graisse transformées', $trans_fat_100g); ?>
+				<?php affichertr('Choléstérol', $cholesterol_100g); ?>
+				<?php afficherTr('Carbohydrates', $carbohydrates_100g); ?>
+				<?php afficherTr('Sucres', $sugars_100g); ?>
+				<?php afficherTr('Fibres', $fibers_100g); ?>
+				<?php afficherTr('Protéines', $proteins_100g); ?>
+				<?php afficherTr('Sel', $salt_100g); ?>
+				<?php afficherTr('Sodium', $sodium_100g); ?>
+				<?php afficherTr('Vitamine A', $vitamin_a_100g); ?>
+				<?php afficherTr('Vitamine C', $vitamin_c_100g); ?>
+				<?php afficherTr('Calcium', $calcium_100g); ?>
+				<?php afficherTr('Fer', $iron_100g); ?>
+				<?php afficherTr('Score nutritif', $nutrition_score_fr_100g); ?>
+            </table>
+        </div>
+    </div>
+</div>
 </body>
 </html>
 
