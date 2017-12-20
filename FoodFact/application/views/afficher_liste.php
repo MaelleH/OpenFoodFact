@@ -10,8 +10,12 @@ $this->load->helper('url');
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+
+	<?php echo link_tag('assets/css/froala_blocks.css'); ?>
+    <?php echo link_tag('assets/css/main.css'); ?>
 </head>
 <body>
+<<<<<<< HEAD
 <div class="container">
     <div class="jumbotron">
         <h1 class="display-3"><?php echo $title; ?></h1>
@@ -26,8 +30,37 @@ $this->load->helper('url');
                    href="<?php echo site_url(''); ?>">Retourner à l’accueil</a>
             <?php endif; ?>
         </p>
+=======
+<section class="fdb-block" style="background-image: url(/assets/imgs/alt_wide_2.svg)">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-sm-10 col-md-8 col-lg-6 text-left">
+				<?php if (strpos(uri_string(), 'result') !== false): ?>
+                    <h1>Résultats de la recherche</h1>
+                    <p class="text-h3">
+                        Sur cette page vous pouvez consulter les résultats de votre recherche.
+                    </p>
+                    <p class="mt-4">
+                        <a class="btn" href="<?php echo site_url('produits/rechercher'); ?>">Rechercher</a>
+                        <a class="btn btn-empty" href="<?php echo site_url(''); ?>">Retour</a>
+                    </p>
+				<?php else: ?>
+                    <h1>Bienvenue sur OpenFoodFacts</h1>
+                    <p class="text-h3">
+                        OpenFoodFacts vous permet de consulter des fiches détaillées pour tous vos produits et ainsi de
+                        savoir ce que vous mangez.
+                    </p>
+                    <p class="mt-4">
+                        <a class="btn" href="<?php echo site_url('produits/rechercher'); ?>">Rechercher</a>
+                    </p>
+				<?php endif; ?>
+            </div>
+        </div>
+>>>>>>> 8fb45a90816e28a3c9fa2b46ff4146b40a55da67
     </div>
+</section>
 
+<div class="container">
     <table class="table table-striped">
         <thead>
         <tr>
