@@ -35,6 +35,7 @@ $this->load->helper('url');
                         savoir ce que vous mangez.
                     </p>
                     <p class="mt-4">
+						<a class="btn" href="<?php echo site_url('produits/ajout'); ?>">Ajouter un produit</a>
                         <a class="btn" href="<?php echo site_url('produits/rechercher'); ?>">Rechercher</a>
                     </p>
 				<?php endif; ?>

@@ -16,6 +16,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<?php echo form_open('home/rechercher')?>
 			<input type="submit" name="Rechercher" value="Rechercher">
 		</form>
+		<?php echo form_open('home/rechercher')?>
+			<input type="submit" name="Rechercher" value="Rechercher">
+		</form>
 	</main>
 </body>
 </html>
