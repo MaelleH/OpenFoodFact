@@ -36,7 +36,7 @@ else{
 // montage sur /var/www/etuinfo/
 $rel_path = str_replace('/var/www/etuinfo/', '',getcwd());
 
-$config['base_url'] = 'http://localhost:3000/';
+$config['base_url'] = 'http://webetuinfo.iutlan.univ-rennes1.fr/papinji/OpenFoodFact/FoodFact/';
 
 /*
 |--------------------------------------------------------------------------

@@ -14,14 +14,14 @@ class Produits extends CI_Controller {
 		$this->load->model('productModel');
 	}
 
-	public function index($offset = 0) {
-		$limit = 5;
+	public function index($page = 1) {
+		$limit = 10;
 
-		$data['produits'] = $this->productModel->getAll($offset, $limit);
+		$data['produits'] = $this->productModel->getAll($page * $limit - $limit, $limit);
 
 		$this->load->library('pagination');
 
-		$config['base_url'] = base_url() . '/produits/index/';
+		$config['base_url'] = base_url() . '/index.php/produits/index/';
 
 		$config['uri_segment'] = 3;
 
@@ -41,6 +41,8 @@ class Produits extends CI_Controller {
 		$config['num_tag_close'] = '</li>';
 
 		$config['attributes'] = array('class' => 'page-link');
+
+		$config['use_page_numbers'] = TRUE;
 
 		$this->pagination->initialize($config);
 
@@ -86,8 +88,8 @@ class Produits extends CI_Controller {
 		$this->load->view('rechercher');
 	}
 
-	public function resultats($offset = 0) {
-		$limit = 5;
+	public function resultats($page = 1) {
+		$limit = 10;
 
 		$crit = [];
 
@@ -160,7 +162,7 @@ class Produits extends CI_Controller {
 			$crit = $_SESSION['crit']; // on restore les critères de la recherche actuelle
 		}
 
-		$resultats = $this->productModel->rechercher($crit, $offset, $limit);
+		$resultats = $this->productModel->rechercher($crit, $page * $limit - $limit, $limit);
 
 		$data['produits'] = $resultats['results'];
 
@@ -169,7 +171,7 @@ class Produits extends CI_Controller {
 
 		$this->load->library('pagination');
 
-		$config['base_url'] = base_url() . '/produits/resultats/';
+		$config['base_url'] = base_url() . 'index.php/produits/resultats/';
 
 		$config['uri_segment'] = 3;
 
@@ -189,6 +191,8 @@ class Produits extends CI_Controller {
 		$config['num_tag_close'] = '</li>';
 
 		$config['attributes'] = array('class' => 'page-link');
+
+		$config['use_page_numbers'] = TRUE;
 
 		$this->pagination->initialize($config);
 

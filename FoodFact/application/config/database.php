@@ -75,11 +75,11 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'    => '',
-	'hostname' => 'horton.elephantsql.com',
+	'hostname' => 'servbdd',
 	'port' => 5432,
-	'username' => 'onxtrzmi',
-	'password' => '702kMBr4QdMcN9GcT8Ld5MDKDfSF5ZLh',
-	'database' => 'onxtrzmi',
+	'username' => 'papinji',
+	'password' => 'SErplentin22!!',
+	'database' => 'pg_papinji',
 	'dbdriver' => 'postgre',
 	'dbprefix' => 'openfoodfacts.',
 	'pconnect' => FALSE,

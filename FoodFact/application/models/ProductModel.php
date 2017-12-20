@@ -7,12 +7,10 @@ class productModel extends CI_Model {
 	}
 
 	public function rechercher($crit, $offset, $limit) {
-		print_r($crit);
-
 		$basereq = "select _produit.id_produit, _produit.product_name, _produit.brands from openfoodfacts._produit left outer join openfoodfacts._ingredienttexte on _produit.id_produit = _ingredienttexte.id_produit where ";
 		$req = $basereq;
 		$recherche = [];
-		
+
 		if(isset($crit['code'])){
 			if(!($req === $basereq)){
 				$req = $req."and ";
@@ -20,7 +18,7 @@ class productModel extends CI_Model {
 			$req=$req."_produit.id_produit=? ";
 			$recherche[]=$crit['code'];
 		}
-			
+
 		if(isset($crit['nom'])){
 			if(!($req === $basereq)){
 				$req = $req."and ";
@@ -173,10 +171,6 @@ class productModel extends CI_Model {
 			$ifex = $this->db->query("select id_produit, product_name, brands from openfoodfacts._produit limit $limit offset $offset;");
 			$nbResults = $this->countAll();
 		}
-		
-		echo $req;
-
-		print_r($recherche);
 
 		return ['nbResults' => $nbResults, 'results' => $ifex->result_array()];
 	}

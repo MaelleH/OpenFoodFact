@@ -21,6 +21,10 @@ $this->load->helper('url');
         <p class="lead">
             <a class="btn btn-primary btn-lg" role="button"
                href="<?php echo site_url('produits/rechercher'); ?>">Rechercher</a>
+            <?php if (strpos(uri_string(), 'resultats')): ?>
+                <a class="btn btn-secondary btn-lg" role="button"
+                   href="<?php echo site_url(''); ?>">Retourner à l’accueil</a>
+            <?php endif; ?>
         </p>
     </div>
 
