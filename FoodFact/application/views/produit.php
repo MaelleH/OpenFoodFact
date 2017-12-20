@@ -57,7 +57,7 @@ if (isset($valeur)) {
 	<?php echo link_tag('assets/css/main.css'); ?>
 </head>
 <body>
-<section class="fdb-block pb-0 mb-4" style="background-image: url(/assets/imgs/bg_1.jpg)">
+<section class="fdb-block pb-0 mb-4" style="background-image: url(<?php echo base_url(); ?>/assets/imgs/bg_1.jpg)">
     <div class="container">
         <div class="row justify-content-end">
             <div class="col-12 col-md-8 col-lg-6 text-center">
@@ -120,7 +120,9 @@ if (isset($valeur)) {
             <h1>Informations nutritionnelles</h1>
 
             <table class="table table-striped">
-				<?php afficherTr('NutriScore', '<img src="https://static.openfoodfacts.org/images/misc/nutriscore-' .strtolower($nutrition_grade_fr) . '.svg" class="img-fluid">'); ?>
+				<?php if (isset($nutrition_grade_fr)): ?>
+					<?php afficherTr('NutriScore', '<img src="https://static.openfoodfacts.org/images/misc/nutriscore-' .strtolower($nutrition_grade_fr) . '.svg" class="img-fluid">'); ?>
+				<?php endif; ?>
 				<?php afficherTr('Énergie', $energy_100g); ?>
 				<?php afficherTr('Graisse', $fat_100g); ?>
 				<?php afficherTr('Graisse saturées', $satured_fat_100g); ?>

@@ -78,10 +78,10 @@ class productModel extends CI_Model {
 		if(isset($crit['nutriScore'])){
 			if(!($crit['nutriScore']=='')){
 				if(!($req === $basereq)){
-				$req = $req."and ";
+					$req = $req."and ";
 				}
 				$req=$req."nutrition_grade_fr=? ";
-				$recherche[]=$crit['nutriScore'];
+				$recherche[]=strtolower($crit['nutriScore']);
 			}	
 		}
 		if(isset($crit['energie'])){
@@ -144,14 +144,14 @@ class productModel extends CI_Model {
 			if(!($req === $basereq)){
 				$req = $req."and ";
 			}
-			$req=$req."vitamin_a_100g>=0 ";
+			$req=$req."vitamin_a_100g>0 ";
 			$recherche[]=$crit['vitamineA'];
 		}		
 		if(isset($crit['vitamineC'])){
 			if(!($req === $basereq)){
 				$req = $req."and ";
 			}
-			$req=$req."vitamin_c_100g>=0 ";
+			$req=$req."vitamin_c_100g>0 ";
 			$recherche[]=$crit['vitamineC'];
 		}
 		if(isset($crit['sodium'])){
@@ -183,7 +183,7 @@ class productModel extends CI_Model {
 		$result = [
 			'product' => $this->db->query("select _produit.*, _ingredienttexte.ingredient_text from openfoodfacts._produit left outer join openfoodfacts._ingredienttexte on _produit.id_produit = _ingredienttexte.id_produit where _produit.id_produit = '$id_produit';")->row_array(),
 			'countries' => array_column($this->db->query("select pays from openfoodfacts._payscommercialiseproduit where id_produit = '$id_produit';")->result_array(), 'pays'),
-			'ingredients' => array_column($this->db->query("select id_ingredient from openfoodfacts._ingredientcontenusproduit where id_produit = '$id_produit'")->result_array(), 'ingredients_text'),
+			'ingredients' => array_column($this->db->query("select id_ingredient from openfoodfacts._ingredientcontenusproduit where id_produit = '$id_produit'")->result_array(), 'id_ingredient'),
 			'additifs' => $this->db->query("select id_additif, nom from openfoodfacts._additif natural join openfoodfacts._additifcontenus where id_produit = '$id_produit';")->result_array(),
 			'ref' => $this->db->query("select url, nom as nom_reference from openfoodfacts._reference where id_reference = '$id_produit';")->result_array()
 		];
@@ -193,7 +193,7 @@ class productModel extends CI_Model {
 		}
 
 		function getIngredientsOfIngredient($db, $ingredientID) {
-			return array_column($db->query("select id_ingredient_contenu from openfoodfacts._ingredientcontenusingredient where id_ingredient_contenant = '$ingredientID';")->result_array(), 'ingredients_contenu');
+			return array_column($db->query("select id_ingredient_contenu from openfoodfacts._ingredientcontenusingredient where id_ingredient_contenant = '$ingredientID';")->result_array(), 'id_ingredient_contenu');
 		}
 
 		function recupererArbreIngredient($db, $ingredientID) {

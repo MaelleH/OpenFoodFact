@@ -18,7 +18,7 @@ $this->load->helper('url');
     <fieldset>
 		<?php echo $pasTrouve ?? ''; ?>
         <legend>Caractéristiques</legend>
-        <label for="code">Code :</label> <input type="text" name="code" autofocus/><br/>
+        <label for="code">Code :</label> <input type="number" name="code" autofocus/><br/>
         <label for="nom">Nom :</label> <input type="text" name="nom"/><br/>
         <label for="marque">Marque :</label> <input type="text" name="marque"/><br/>
         <label for="pays">Pays :</label> <input type="text" name="pays"/><br/>

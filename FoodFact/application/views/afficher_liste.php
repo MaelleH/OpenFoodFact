@@ -15,23 +15,7 @@ $this->load->helper('url');
     <?php echo link_tag('assets/css/main.css'); ?>
 </head>
 <body>
-<<<<<<< HEAD
-<div class="container">
-    <div class="jumbotron">
-        <h1 class="display-3"><?php echo $title; ?></h1>
-
-        <hr class="my-4">
-
-        <p class="lead">
-            <a class="btn btn-primary btn-lg" role="button"
-               href="<?php echo site_url('produits/rechercher'); ?>">Rechercher</a>
-            <?php if (strpos(uri_string(), 'resultats')): ?>
-                <a class="btn btn-secondary btn-lg" role="button"
-                   href="<?php echo site_url(''); ?>">Retourner à l’accueil</a>
-            <?php endif; ?>
-        </p>
-=======
-<section class="fdb-block" style="background-image: url(/assets/imgs/alt_wide_2.svg)">
+<section class="fdb-block" style="background-image: url(<?php echo base_url(); ?>/assets/imgs/alt_wide_2.svg)">
     <div class="container">
         <div class="row">
             <div class="col-12 col-sm-10 col-md-8 col-lg-6 text-left">
@@ -56,7 +40,6 @@ $this->load->helper('url');
 				<?php endif; ?>
             </div>
         </div>
->>>>>>> 8fb45a90816e28a3c9fa2b46ff4146b40a55da67
     </div>
 </section>
 
