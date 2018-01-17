@@ -10,9 +10,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
-
 	<?php echo link_tag('assets/css/froala_blocks.css'); ?>
 	<?php echo link_tag('assets/css/main.css'); ?>
+	<?php echo link_tag('assets/css/nutri.css'); ?>
 	<style>
 	
 	
@@ -33,10 +33,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <label for="nom">Nom du produit </label> <input type="text" id="nom"/><br/>
         
 		<label for="marque">Marque </label><input type="text" id="marque" list="liste_marque" /><br/>
-		<datalist id="liste_marque"></datalist>   
+		<datalist id="liste_marque">
+			<?php foreach($listeMarque as $marque) : ?>
+				<option><?php echo $marque['nom'] ?></option>
+			<?php endforeach;?>        
+        </datalist>  
 		
         <label for="pays">Pays </label> <input type="text" id="pays" list="liste_pays"/><br/>
-        <datalist id="liste_pays"></datalist>
+        <datalist id="liste_pays">
+			<?php foreach($listePays as $pays) : ?>
+				<option><?php echo $pays['nom'] ?></option>
+			<?php endforeach;?>        
+        </datalist>
         
     </fieldset>
     <fieldset>
@@ -86,10 +94,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<?php echo form_open('produits') ?>
     <input type="submit" id="Cancel" value="Annuler">
     </form>
-    
-    
-    <script type="text/javascript">
-		
-    </script>
+
 </body>
 </html>

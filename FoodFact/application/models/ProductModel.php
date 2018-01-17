@@ -222,4 +222,28 @@ class productModel extends CI_Model {
 	public function countAll() {
 		return $this->db->query("select count(*) from openfoodfacts._produit;")->result_array()[0]['count'];
 	}
+	
+	public function ajoutProduit(){
+		
+		
+	}
+	
+	
+	
+	
+	
+	
+
+	public function listeAdd(){
+		return $this->db->query("select nom from openfoodfacts._additif;")->result_array();
+	}
+	public function listeIng(){
+		return $this->db->query("select ingredients_text from openfoodfacts._ingredient;")->result_array();
+	}
+	public function listePays(){
+		return $this->db->query("select nom from openfoodfacts._pays;")->result_array();
+	}
+	public function listeMarque(){
+		return $this->db->query("select nom from openfoodfacts._marque;")->result_array();
+	}
 }

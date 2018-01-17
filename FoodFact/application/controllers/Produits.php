@@ -89,7 +89,11 @@ class Produits extends CI_Controller {
 	}
 
 	public function ajout() {
-		$this->load->view('ajouter_produit');
+		$data['listeAdd']=$this->productModel->listeAdd();
+		$data['listePays']=$this->productModel->listePays();
+		$data['listeIng']=$this->productModel->listeIng();
+		$data['listeMarque']=$this->productModel->listeMarque();
+		$this->load->view('ajouter_produit',$data);
 	}
 
 	public function ajout_ingredients() {
