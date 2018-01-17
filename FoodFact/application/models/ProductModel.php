@@ -234,15 +234,6 @@ class productModel extends CI_Model {
 		}
 		return $ifex;
 	}
-		
-	}
-	
-	
-	
-	
-	
-	
-
 	public function listeAdd(){
 		return $this->db->query("select nom from openfoodfacts._additif;")->result_array();
 	}
