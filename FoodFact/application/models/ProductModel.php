@@ -228,16 +228,11 @@ class productModel extends CI_Model {
 		$recherche = [];
 		$recherche[]='now()'; // Le created_t
 		$recherche[]='now()'; // Le last_modified_t
-		$recherche[]=
+		$recherche[]=$crit['nom'];
 		if(!($req === $basereq)){
-			$ifex = $this->db->query($req." limit $limit offset $offset",$recherche);
-			$nbResults = $this->db->query(str_replace($basereq, "select count(*) from openfoodfacts._produit left outer join openfoodfacts._ingredienttexte on _produit.id_produit = _ingredienttexte.id_produit where ", $req), $recherche)->result_array()[0]['count'];
-		}else{
-			$ifex = $this->db->query("select id_produit, product_name, brands from openfoodfacts._produit limit $limit offset $offset;");
-			$nbResults = $this->countAll();
+			$ifex = $this->db->query($basereq,$recherche);
 		}
-
-		return ['nbResults' => $nbResults, 'results' => $ifex->result_array()];
+		return $ifex;
 	}
 		
 	}
