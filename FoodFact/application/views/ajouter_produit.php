@@ -73,16 +73,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <label for="matieresGrassesTransformees">Matières grasses transformées</label><input type="text" id="matieresGrassesTransformees"/><br/>
         <label for="cholesterol">Choléstérol </label><input type="text" id="cholesterol"/><br/> 
         <label for="carbo">Carbohydrates </label><input type="text" id="carbo"/><br/>
-        <label for="fibresAlimentaires">fibres Alimentaires </label><input type="text" id="fibresAlimentaires"/><br/>
         <label for="sucres">Sucres </label><input type="text" id="sucres"/><br/>
+        <label for="fibresAlimentaires">fibres Alimentaires </label><input type="text" id="fibresAlimentaires"/><br/>
         <label for="proteines">Protéines </label><input type="text" id="proteines"/><br/>
         <label for="sel">Sel </label><input type="text" id="sel"/><br/>
+        <label for="sodium">Sodium </label><input type="text" id="sodium"/><br/>
         <label for="vitamineA">Vitamine A </label><input type="text" id="vitamineA"/><br/>
         <label for="vitamineC">Vitamine C </label><input type="text" id="vitamineA"/><br/>
         <label for="calcium">Calcium </label><input type="text" id="calcium"/><br/>
+        <label for="fer">Fer </label><input type="text" id="fer"/><br/>        
         <label for="scoreNutritif">Score nutritif </label><input type="text" id="scoreNutritif"/><br/>
 
-        <label for="sodium">Sodium </label><input type="text" id="sodium"/><br/>
     </fieldset>
     <fieldset>
         <legend>Informations supplémentaires</legend>
