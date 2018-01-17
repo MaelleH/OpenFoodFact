@@ -223,8 +223,22 @@ class productModel extends CI_Model {
 		return $this->db->query("select count(*) from openfoodfacts._produit;")->result_array()[0]['count'];
 	}
 	
-	public function ajoutProduit(){
-		
+	public function ajoutProduit($crit){
+		$basereq = "insert into _produit(created_t,last_modified_t,product_name,brands,serving_size,nutrition_grade_fr,ernegy_100g,fat_100g,stured_fat_100g,trans_fat_100g,cholesterol_100g,carbohydrates_100g,sugars_100g,fibers_100g,proteins_100g,salt_100g,sodium_100g,vitamin_a_100g,vitamin_c_100g,calcium_100g,iron_100g,nutrition_score_fr_100g) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+		$recherche = [];
+		$recherche[]='now()'; // Le created_t
+		$recherche[]='now()'; // Le last_modified_t
+		$recherche[]=
+		if(!($req === $basereq)){
+			$ifex = $this->db->query($req." limit $limit offset $offset",$recherche);
+			$nbResults = $this->db->query(str_replace($basereq, "select count(*) from openfoodfacts._produit left outer join openfoodfacts._ingredienttexte on _produit.id_produit = _ingredienttexte.id_produit where ", $req), $recherche)->result_array()[0]['count'];
+		}else{
+			$ifex = $this->db->query("select id_produit, product_name, brands from openfoodfacts._produit limit $limit offset $offset;");
+			$nbResults = $this->countAll();
+		}
+
+		return ['nbResults' => $nbResults, 'results' => $ifex->result_array()];
+	}
 		
 	}
 	
