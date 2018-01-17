@@ -13,6 +13,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 	<?php echo link_tag('assets/css/froala_blocks.css'); ?>
 	<?php echo link_tag('assets/css/main.css'); ?>
+	<style>
+	
+	
+	
+	
+	
+	</style>
+
+
+
 </head>
 <body>
 	<?php echo form_open('produits/ajout') ?>
@@ -20,9 +30,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <fieldset>
 		<?php echo $pasTrouve ?? ''; ?>
         <legend>Caractéristiques</legend>
-        <label for="nom">Nom du produit:</label> <input type="text" name="nom"/><br/>
-        <label for="marque">Marque :</label> <input type="text" name="marque"/><br/>
-        <label for="pays">Pays :</label> <input type="text" name="pays"/><br/>
+        <label for="nom">Nom du produit </label> <input type="text" id="nom"/><br/>
+        
+		<label for="marque">Marque </label><input type="text" id="marque" list="liste_marque" /><br/>
+		<datalist id="liste_marque"></datalist>   
+		
+        <label for="pays">Pays </label> <input type="text" id="pays" list="liste_pays"/><br/>
+        <datalist id="liste_pays"></datalist>
+        
     </fieldset>
     <fieldset>
         <legend>Composition</legend>
@@ -34,7 +49,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</fieldset>
     <fieldset>
         <legend>Informations nutritionnelles</legend>
-        <label for="nutriScore">NutriScore : </label><select name="nutriScore">
+		<label for="portion">Portion par personne </label><input type="text" id="portion"/><br/>
+		<label for="nutriScore">NutriScore </label><select id="nutriScore">
             <option selected="selected">
             <option>A</option>
             <option>B</option>
@@ -42,35 +58,38 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <option>D</option>
             <option>E</option>
         </select><br/>
-        <label for="energie">Énergie (en kj): </label><input type="text" name="energie"/><br/>
-        <label for="matieresGrasses">Matières grasses : </label><input type="text" name="matieresGrasses"/><br/>
-        <label for="matieresGrassesSaturees">Matières grasses Saturées : </label><input type="text" name="matieresGrassesSaturees"/><br/>                                   
-        <label for="matieresGrassesTransformees">Matières grasses transformées</label><input type="text" name="matieresGrassesTransformees"/><br/>
-        <label for="cholesterol">Choléstérol : </label><input type="text" name="cholesterol"/><br/> 
-        <label for="carbo">Carbohydrates : </label><input type="text" name="carbo"/><br/>
-        <label for="fibresAlimentaires">fibres Alimentaires : </label><input type="text" name="fibresAlimentaires"/><br/>
-        <label for="sucres">Sucres : </label><input type="text" name="sucres"/><br/>
-        <label for="proteines">Protéines : </label><input type="text" name="proteines"/><br/>
-        <label for="sel">Sel max : </label><input type="text" name="sel"/><br/>
-        <label for="vitamineA">Vitamine A </label><input type="text" name="vitamineA"/><br/>
-        <label for="vitamineC">Vitamine C </label><input type="text" name="vitamineA"/><br/>
-        <label for="calcium">Calcium : </label><input type="text" name="calcium"/><br/>
-        <label for="scoreNutritif">Score nutritif : </label><input type="text" name="scoreNutritif"/><br/>
+        <label for="nutriGrade">NutriGrade(de 1 à 16)</label><input type="text" id="nutriGrade"/><br/>
+        <label for="energie">Énergie (en kj) </label><input type="text" id="energie"/><br/>
+        <label for="matieresGrasses">Matières grasses </label><input type="text" id="matieresGrasses"/><br/>
+        <label for="matieresGrassesSaturees">Matières grasses Saturées </label><input type="text" id="matieresGrassesSaturees"/><br/>                                   
+        <label for="matieresGrassesTransformees">Matières grasses transformées</label><input type="text" id="matieresGrassesTransformees"/><br/>
+        <label for="cholesterol">Choléstérol </label><input type="text" id="cholesterol"/><br/> 
+        <label for="carbo">Carbohydrates </label><input type="text" id="carbo"/><br/>
+        <label for="fibresAlimentaires">fibres Alimentaires </label><input type="text" id="fibresAlimentaires"/><br/>
+        <label for="sucres">Sucres </label><input type="text" id="sucres"/><br/>
+        <label for="proteines">Protéines </label><input type="text" id="proteines"/><br/>
+        <label for="sel">Sel </label><input type="text" id="sel"/><br/>
+        <label for="vitamineA">Vitamine A </label><input type="text" id="vitamineA"/><br/>
+        <label for="vitamineC">Vitamine C </label><input type="text" id="vitamineA"/><br/>
+        <label for="calcium">Calcium </label><input type="text" id="calcium"/><br/>
+        <label for="scoreNutritif">Score nutritif </label><input type="text" id="scoreNutritif"/><br/>
 
-        <label for="sodium">Sodium </label><input type="text" name="sodium"/><br/>
+        <label for="sodium">Sodium </label><input type="text" id="sodium"/><br/>
     </fieldset>
     <fieldset>
         <legend>Informations supplémentaires</legend>
-		<label for="lien">Lien vers la page du produit sur le site du fabriquant </label><input type="text" name="lien"/><br/>
+		<label for="lien">Lien vers la page du produit sur le site du fabriquant </label><input type="text" id="lien"/><br/>
 
 	</fieldset>    
-    <input type="submit" name="Submit" value="Valider">
+    <input type="submit" id="Submit" value="Valider">
     </form>
 	<?php echo form_open('produits') ?>
-    <input type="submit" name="Cancel" value="Annuler">
+    <input type="submit" id="Cancel" value="Annuler">
     </form>
-</main>
-	
-	</form>
+    
+    
+    <script type="text/javascript">
+		
+    </script>
 </body>
 </html>
