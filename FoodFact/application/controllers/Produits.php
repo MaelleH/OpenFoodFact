@@ -87,12 +87,15 @@ class Produits extends CI_Controller {
 	public function rechercher() {
 		$this->load->view('rechercher');
 	}
-	
-	
+
 	public function ajout() {
 		$this->load->view('ajouter_produit');
 	}
-	
+
+	public function ajout_ingredients() {
+		$this->load->view('ajouter_produit_ingredients');
+	}
+
 	public function resultats($page = 1) {
 		$limit = 10;
 
