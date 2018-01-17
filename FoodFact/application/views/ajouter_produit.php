@@ -88,12 +88,36 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <legend>Informations supplémentaires</legend>
 		<label for="lien">Lien vers la page du produit sur le site du fabriquant </label><input type="text" id="lien"/><br/>
 
-	</fieldset>    
+	</fieldset>
+	<h2>Ingrédients</h2>
+	<button type="button" class="btn btn-success" onclick="ajouterIngredient('')">Ajouter un ingrédient</button>
+	<ul id="liste" class="list-without-dots"></ul>
+	<datalist id="ingredients">
+		<option value="Blackberry">Blackberry</option>
+		<option value="Blackcurrant">Blackcurrant</option>
+		<option value="Blueberry">Blueberry</option>
+	</datalist>
     <input type="submit" id="Submit" value="Valider">
     </form>
 	<?php echo form_open('produits') ?>
     <input type="submit" id="Cancel" value="Annuler">
     </form>
+	<script>
+		function ajouterIngredient(idActuel) {
+			var liste = document.getElementById('liste' + idActuel);
+			var id = liste.childNodes.length + '';
+			if (idActuel !== '') {
+				id = idActuel + '_' + id;
+			}
+			var ingredient = document.createElement('li');
+			ingredient.id = 'ingredient' + id;
+			ingredient.innerHTML = '<div class="row"><div class="col-5"><input class="form-control" type="text" id="ingredient" list="ingredients" name="ingredients[' + id.replace(/_/g, '][') + ']"></div><div class="col-7"><button type="button" class="btn btn-danger" onclick="enleverIngredient(\'' + id + '\')">Supprimer cet ingrédient</button><button type="button" class="btn btn-success ml-2" onclick="ajouterIngredient(\'' + id + '\')">Ajouter un sous-ingrédient</button></div></div><ul class="list-without-dots" id="liste' + id +'"</ul>';
+			document.getElementById('liste' + idActuel).appendChild(ingredient);
+		}
 
+		function enleverIngredient(id) {
+			document.getElementById('ingredient' + id).remove();
+		}
+	</script>
 </body>
 </html>

@@ -6,3 +6,7 @@
     background-color: #80199a;
     border-color: #80199a;
 }
+
+.list-without-dots {
+    list-style-type: none;
+}
