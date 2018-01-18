@@ -234,11 +234,13 @@ class productModel extends CI_Model {
 		if($crit['marque']==""){$recherche[]=NULL;}else{$recherche[]=$crit['marque'];}
 		if($crit['portion']==""){$recherche[]=NULL;}else{$recherche[]=$crit['portion'];}
 		if($crit['nutriGrade']==""){$recherche[]=NULL;}else{$recherche[]=$crit['nutriGrade'];}
+		if($crit['energie']==""){$recherche[]=NULL;}else{$recherche[]=$crit['energie'];}
 		if($crit['matieresGrasses']==""){$recherche[]=NULL;}else{$recherche[]=$crit['matieresGrasses'];}
 		if($crit['matieresGrassesSaturees']==""){$recherche[]=NULL;}else{$recherche[]=$crit['matieresGrassesSaturees'];}
 		if($crit['matieresGrassesTransformees']==""){$recherche[]=NULL;}else{$recherche[]=$crit['matieresGrassesTransformees'];}
 		if($crit['cholesterol']==""){$recherche[]=NULL;}else{$recherche[]=$crit['cholesterol'];}
 		if($crit['carbo']==""){$recherche[]=NULL;}else{$recherche[]=$crit['carbo'];}
+		if($crit['sucre']==""){$recherche[]=NULL;}else{$recherche[]=$crit['sucre'];}
 		if($crit['fibresAlimentaires']==""){$recherche[]=NULL;}else{$recherche[]=$crit['fibresAlimentaires'];}
 		if($crit['proteines']==""){$recherche[]=NULL;}else{$recherche[]=$crit['proteines'];}
 		if($crit['sel']==""){$recherche[]=NULL;}else{$recherche[]=$crit['sel'];}
