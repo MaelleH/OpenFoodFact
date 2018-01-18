@@ -231,28 +231,27 @@ class productModel extends CI_Model {
 		//$recherche[]='now()'; // Le created_t
 		//$recherche[]='now()'; // Le last_modified_t
 		$recherche[]=$crit['nom'];
-		$recherche[]=$crit['marque'] ?? "NULL";
-		$recherche[]=$crit['portion'] ?? "NULL";
-		$recherche[]=$crit['nutriGrade'] ?? "NULL";
-		$recherche[]=$crit['energie'] ?? "NULL";
-		$recherche[]=$crit['matieresGrasses'] ?? "NULL";
-		$recherche[]=$crit['matieresGrassesSaturees'  ?? "NULL";
-		$recherche[]=$crit['matieresGrassesTransformees'] ?? "NULL";
-		$recherche[]=$crit['cholesterol']  ?? "NULL";
-		$recherche[]=$crit['carbo'] ?? "NULL";
-		$recherche[]=$crit['sucres'] ?? "NULL";
-		$recherche[]=$crit['fibresAlimentaires'] ?? "NULL";
-		$recherche[]=$crit['proteines'] ?? "NULL";
-		$recherche[]=$crit['sel'] ?? "NULL";
-		$recherche[]=$crit['sodium'] ?? "NULL";
-		$recherche[]=$crit['vitamineA'] ?? "NULL";
-		$recherche[]=$crit['vitamineC'] ?? "NULL";
-		$recherche[]=$crit['calcium'] ?? "NULL";
-		$recherche[]=$crit['fer'] ?? "NULL";
-		$recherche[]=$crit['scoreNutritif'] ?? NULL;
+		if($crit['marque']==""){$recherche[]=NULL;}else{$recherche[]=$crit['marque'] ?? NULL;}
+		if($crit['portion']==""){$recherche[]=NULL;}else{$recherche[]=$crit['portion'] ?? NULL;}
+		if($crit['nutriGrade']==""){$recherche[]=NULL;}else{$recherche[]=$crit['nutriGrade'] ?? NULL;}
+		if($crit['matieresGrasses']==""){$recherche[]=NULL;}else{$recherche[]=$crit['matieresGrasses'] ?? NULL;}
+		if($crit['matieresGrassesSaturees']==""){$recherche[]=NULL;}else{$recherche[]=$crit['matieresGrassesSaturees'] ?? NULL;}
+		if($crit['matieresGrassesTransformees']==""){$recherche[]=NULL;}else{$recherche[]=$crit['matieresGrassesTransformees'] ?? NULL;}
+		if($crit['cholesterol']==""){$recherche[]=NULL;}else{$recherche[]=$crit['cholesterol'] ?? NULL;}
+		if($crit['carbo']==""){$recherche[]=NULL;}else{$recherche[]=$crit['carbo'] ?? NULL;}
+		if($crit['fibresAlimentaires']==""){$recherche[]=NULL;}else{$recherche[]=$crit['fibresAlimentaires'] ?? NULL;}
+		if($crit['proteines']==""){$recherche[]=NULL;}else{$recherche[]=$crit['proteines'] ?? NULL;}
+		if($crit['sel']==""){$recherche[]=NULL;}else{$recherche[]=$crit['sel'] ?? NULL;}
+		if($crit['sodium']==""){$recherche[]=NULL;}else{$recherche[]=$crit['sodium'] ?? NULL;}
+		if($crit['vitamineA']==""){$recherche[]=NULL;}else{$recherche[]=$crit['vitamineA'] ?? NULL;}
+		if($crit['vitamineC']==""){$recherche[]=NULL;}else{$recherche[]=$crit['vitamineC'] ?? NULL;}
+		if($crit['calcium']==""){$recherche[]=NULL;}else{$recherche[]=$crit['calcium'] ?? NULL;}
+		if($crit['fer']==""){$recherche[]=NULL;}else{$recherche[]=$crit['fer'] ?? NULL;}
+		if($crit['scoreNutritif']==""){$recherche[]=NULL;}else{$recherche[]=$crit['scoreNutritif'] ?? NULL;}
+
 
 		//On vérifie que la marque existe, sinon on la créer
-		if($this->db->query("select * from openfoodfacts._marque where nom=?",$crit['marque'])==NULL){
+		if($this->db->query("select * from openfoodfacts._marque where nom=?",$crit['marque'])==NULL && $crit['marque']!===""){
 			$insertM = $this->db->query("insert into openfoodfacts._marque values(?)",$crit['marque']);
 		}
 		//On insert le produit
