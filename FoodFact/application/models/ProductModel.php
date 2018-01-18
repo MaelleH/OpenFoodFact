@@ -222,6 +222,7 @@ class productModel extends CI_Model {
 	public function countAll() {
 		return $this->db->query("select count(*) from openfoodfacts._produit;")->result_array()[0]['count'];
 	}
+	public function insertIngr($tb){}
 
 	public function ajoutProduit($crit,$pays,$addi,$ingr){
 		$basereq = "insert into openfoodfacts._produit(created_t,last_modified_t,product_name,brands,serving_size,nutrition_grade_fr,energy_100g,fat_100g,satured_fat_100g,trans_fat_100g,cholesterol_100g,carbohydrates_100g,sugars_100g,fibers_100g,proteins_100g,salt_100g,sodium_100g,vitamin_a_100g,vitamin_c_100g,calcium_100g,iron_100g,nutrition_score_fr_100g) values(now(),now(),?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
@@ -230,25 +231,25 @@ class productModel extends CI_Model {
 		//$recherche[]='now()'; // Le created_t
 		//$recherche[]='now()'; // Le last_modified_t
 		$recherche[]=$crit['nom'];
-		$recherche[]=$crit['marque'];
-		$recherche[]=$crit['portion'];
-		$recherche[]=$crit['nutriGrade'];
-		$recherche[]=$crit['energie'];
-		$recherche[]=$crit['matieresGrasses'];
-		$recherche[]=$crit['matieresGrassesSaturees'];
-		$recherche[]=$crit['matieresGrassesTransformees'];
-		$recherche[]=$crit['cholesterol'];
-		$recherche[]=$crit['carbo'];
-		$recherche[]=$crit['sucres'];
-		$recherche[]=$crit['fibresAlimentaires'];
-		$recherche[]=$crit['proteines'];
-		$recherche[]=$crit['sel'];
-		$recherche[]=$crit['sodium'];
-		$recherche[]=$crit['vitamineA'];
-		$recherche[]=$crit['vitamineC'];
-		$recherche[]=$crit['calcium'];
-		$recherche[]=$crit['fer'];
-		$recherche[]=$crit['scoreNutritif'];
+		$recherche[]=$crit['marque'] ?? NULL;
+		$recherche[]=$crit['portion'] ?? NULL;
+		$recherche[]=$crit['nutriGrade'] ?? NULL;
+		$recherche[]=$crit['energie'] ?? NULL;
+		$recherche[]=$crit['matieresGrasses'] ?? NULL;
+		$recherche[]=$crit['matieresGrassesSaturees'  ?? NULL;
+		$recherche[]=$crit['matieresGrassesTransformees'] ?? NULL;
+		$recherche[]=$crit['cholesterol']  ?? NULL;
+		$recherche[]=$crit['carbo'] ?? NULL;
+		$recherche[]=$crit['sucres'] ?? NULL;
+		$recherche[]=$crit['fibresAlimentaires'] ?? NULL;
+		$recherche[]=$crit['proteines'] ?? NULL;
+		$recherche[]=$crit['sel'] ?? NULL;
+		$recherche[]=$crit['sodium'] ?? NULL;
+		$recherche[]=$crit['vitamineA'] ?? NULL;
+		$recherche[]=$crit['vitamineC'] ?? NULL;
+		$recherche[]=$crit['calcium'] ?? NULL;
+		$recherche[]=$crit['fer'] ?? NULL;
+		$recherche[]=$crit['scoreNutritif'] ?? NULL;
 
 		//On vérifie que la marque existe, sinon on la créer
 		if($this->db->query("select * from openfoodfacts._marque where nom=?",$crit['marque'])==NULL){
