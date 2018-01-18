@@ -224,7 +224,7 @@ class productModel extends CI_Model {
 	}
 	
 	public function ajoutProduit($crit,$pays,$addi,$ingr){
-		$basereq = "insert into _produit(created_t,last_modified_t,product_name,brands,serving_size,nutrition_grade_fr,ernegy_100g,fat_100g,stured_fat_100g,trans_fat_100g,cholesterol_100g,carbohydrates_100g,sugars_100g,fibers_100g,proteins_100g,salt_100g,sodium_100g,vitamin_a_100g,vitamin_c_100g,calcium_100g,iron_100g,nutrition_score_fr_100g) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+		$basereq = "insert into openfoodfacts._produit(created_t,last_modified_t,product_name,brands,serving_size,nutrition_grade_fr,energy_100g,fat_100g,satured_fat_100g,trans_fat_100g,cholesterol_100g,carbohydrates_100g,sugars_100g,fibers_100g,proteins_100g,salt_100g,sodium_100g,vitamin_a_100g,vitamin_c_100g,calcium_100g,iron_100g,nutrition_score_fr_100g) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 		$recherche = [];
 		$recherche[]='now()'; // Le created_t
 		$recherche[]='now()'; // Le last_modified_t
@@ -249,16 +249,14 @@ class productModel extends CI_Model {
 		$recherche[]=$crit['fer'];
 		$recherche[]=$crit['scoreNutritif'];
 
-		if(!($req === $basereq)){
-			$insertI = $this->db->query($basereq,$recherche);
-		}
-		
+		$insertI = $this->db->query($basereq,$recherche);
+		/*
 		foreach($pays as $nom){
 			$insertP = $this->db->query("insert into _payscommercialiseproduit values(?,?)",array($crit['nom'],$nom));
 		}
+		*/
 		
-		
-		return $insertI && $insertP ;
+		return $insertI /*&& $insertP*/ ;
 	}
 	public function listeAdd(){
 		return $this->db->query("select nom from openfoodfacts._additif;")->result_array();

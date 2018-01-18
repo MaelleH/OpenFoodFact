@@ -89,11 +89,46 @@ class Produits extends CI_Controller {
 	}
 
 	public function ajout() {
-		$data['listeAdd']=$this->productModel->listeAdd();
-		$data['listePays']=$this->productModel->listePays();
-		$data['listeIng']=$this->productModel->listeIng();
-		$data['listeMarque']=$this->productModel->listeMarque();
-		$this->load->view('ajouter_produit',$data);
+		$this->form_validation->set_rules('nom', 'Nom', 'required');
+
+		if ($this->form_validation->run() == FALSE) {
+			$data['listeAdd']=$this->productModel->listeAdd();
+			$data['listePays']=$this->productModel->listePays();
+			$data['listeIng']=$this->productModel->listeIng();
+			$data['listeMarque']=$this->productModel->listeMarque();
+
+			$this->load->view('ajouter_produit', $data);
+		} else {
+			$produit = [
+				'nom' => $this->input->post('nom'),
+				'marque' => $this->input->post('marque'),
+				'portion' => $this->input->post('portion'),
+				'nutriScore' => $this->input->post('nutriScore'),
+				'nutriGrade' => $this->input->post('nutriGrade'),
+				'energie' => $this->input->post('energie'),
+				'matieresGrasses' => $this->input->post('matieresGrasses'),
+				'matieresGrassesSaturees' => $this->input->post('matieresGrassesSaturees'),
+				'matieresGrassesTransformees' => $this->input->post('matieresGrassesTransformees'),
+				'cholesterol' => $this->input->post('cholesterol'),
+				'carbo' => $this->input->post('carbo'),
+				'fibresAlimentaires' => $this->input->post('fibresAlimentaires'),
+				'sucres' => $this->input->post('sucres'),
+				'proteines' => $this->input->post('proteines'),
+				'sel' => $this->input->post('sel'),
+				'vitamineA' => $this->input->post('vitamineA'),
+				'vitamineC' => $this->input->post('vitamineC'),
+				'calcium' => $this->input->post('calcium'),
+				'scoreNutritif' => $this->input->post('scoreNutritif'),
+				'fer' => $this->input->post('fer'),
+				'sodium' => $this->input->post('sodium')
+			];
+
+			$pays = $this->input->post('pays');
+			$additifs = $this->input->post('additifs');
+			$ingredients = $this->input->post('ingredients');
+
+			$this->productModel->ajoutProduit($produit, $pays, $additifs, $ingredients);
+		}
 	}
 
 	public function ajout_ingredients() {
