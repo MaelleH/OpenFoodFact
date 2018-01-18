@@ -103,7 +103,6 @@ class Produits extends CI_Controller {
 				'nom' => $this->input->post('nom'),
 				'marque' => $this->input->post('marque'),
 				'portion' => $this->input->post('portion'),
-				'nutriScore' => $this->input->post('nutriScore'),
 				'nutriGrade' => $this->input->post('nutriGrade'),
 				'energie' => $this->input->post('energie'),
 				'matieresGrasses' => $this->input->post('matieresGrasses'),
