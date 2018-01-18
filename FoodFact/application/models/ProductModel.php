@@ -251,7 +251,7 @@ class productModel extends CI_Model {
 
 
 		//On vérifie que la marque existe, sinon on la créer
-		if($this->db->query("select * from openfoodfacts._marque where nom=?",$crit['marque'])==NULL && $crit['marque']!===""){
+		if($crit['marque']!=="" && $this->db->query("select * from openfoodfacts._marque where nom=?",$crit['marque'])==NULL){
 			$insertM = $this->db->query("insert into openfoodfacts._marque values(?)",$crit['marque']);
 		}
 		//On insert le produit
