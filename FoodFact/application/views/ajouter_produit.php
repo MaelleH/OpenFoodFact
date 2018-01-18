@@ -23,23 +23,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<tbody>
 						<tr>
 							<th scope="row">Nom</th>
-							<td><input type="text" name="nom"></input></td>
+							<td><input class="form-control" type="text" name="nom"/></td>
 						</tr>
 						<tr>
 							<th scope="row">Marque</th>
-							<td><input type="text" name="marque" list="liste_marque" /></td>
+							<td><input class="form-control" type="text" name="marque" list="liste_marque"/></td>
 						</tr>
 						<tr>
 							<th scope="row">Pays</th>
-							<td><input type="text" name="pays" list="liste_pays" /></td>
+							<td>
+								<button type="button" class="btn btn-success" onclick="ajouterInputPays()">Ajouter un pays</button>
+								<div id="pays">
+								</div></td>
 						</tr>
 						<tr>
 							<th scope="row">Portion</th>
-							<td><input type="text"></input></td>
-						</tr>
-						<tr>
-							<th scope="row">Nom</th>
-							<td><input type="text"></input></td>
+							<td><input class="form-control" type="text" name="portion"/></td>
 						</tr>
 					</tbody>
 				</table>
@@ -61,7 +60,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<tr>
 							<th scope="row">NutriScore</th>
 							<td>
-								<select id="nutriScore">
+								<select id="nutriGrade">
 									<option selected="selected">
 									<option>A</option>
 									<option>B</option>
@@ -73,67 +72,67 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						</tr>
 						<tr>
 							<th scope="row">Énergie</th>
-							<td><input type="text" name="nom"></input></td>
+							<td><input class="form-control" type="text" name="energie"></input></td>
 						</tr>
 						<tr>
 							<th scope="row">Graisse</th>
-							<td><input type="text" name="nom"></input></td>
+							<td><input class="form-control" type="text" name="matieresGrasses"></input></td>
 						</tr>
 						<tr>
 							<th scope="row">Graisse saturées</th>
-							<td><input type="text" name="nom"></input></td>
+							<td><input class="form-control" type="text" name="matieresGrassesSaturees"></input></td>
 						</tr>
 						<tr>
 							<th scope="row">Graisse transformées</th>
-							<td><input type="text" name="nom"></input></td>
+							<td><input type="text" name="matieresGrassesTransformees"></input></td>
 						</tr>
 						<tr>
 							<th scope="row">Choléstérol</th>
-							<td><input type="text" name="nom"></input></td>
+							<td><input type="text" name="cholesterol"></input></td>
 						</tr>
 						<tr>
 							<th scope="row">Carbohydrates</th>
-							<td><input type="text" name="nom"></input></td>
+							<td><input type="text" name="carbo"></input></td>
 						</tr>
 						<tr>
 							<th scope="row">Sucres</th>
-							<td><input type="text" name="nom"></input></td>
+							<td><input type="text" name="sucres"></input></td>
 						</tr>
 						<tr>
 							<th scope="row">Fibres</th>
-							<td><input type="text" name="nom"></input></td>
+							<td><input type="text" name="fibresAlimentaires"></input></td>
 						</tr>
 						<tr>
 							<th scope="row">Protéines</th>
-							<td><input type="text" name="nom"></input></td>
+							<td><input type="text" name="proteines"></input></td>
 						</tr>
 						<tr>
 							<th scope="row">Sel</th>
-							<td><input type="text" name="nom"></input></td>
+							<td><input type="text" name="sel"></input></td>
 						</tr>
 						<tr>
 							<th scope="row">Sodium</th>
-							<td><input type="text" name="nom"></input></td>
+							<td><input type="text" name="sodium"></input></td>
 						</tr>
 						<tr>
 							<th scope="row">Vitamine A</th>
-							<td><input type="text" name="nom"></input></td>
+							<td><input type="text" name="vitamineA"></input></td>
 						</tr>
 						<tr>
 							<th scope="row">Vitamine C</th>
-							<td><input type="text" name="nom"></input></td>
+							<td><input type="text" name="vitamineC"></input></td>
 						</tr>
 						<tr>
 							<th scope="row">Calcium</th>
-							<td><input type="text" name="nom"></input></td>
+							<td><input type="text" name="calcium"></input></td>
 						</tr>
 						<tr>
 							<th scope="row">Fer</th>
-							<td><input type="text" name="nom"></input></td>
+							<td><input type="text" name="fer"></input></td>
 						</tr>
 						<tr>
 							<th scope="row">Score nutritif</th>
-							<td><input type="text" name="nom"></input></td>
+							<td><input type="text" name="scoreNutritif"></input></td>
 						</tr>
 					</tbody>
 				</table>
@@ -192,7 +191,29 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			input.className = 'form-control';
 			input.onchange = function () {
 				if (this.value === '') {
-					this.remove();
+					this.parentElement.remove();
+				}
+			};
+			div.appendChild(input);
+			c.appendChild(div);
+		} else {
+			alert('Veuillez remplir le champ actuel avant d’en ajouter un autre !');
+		}
+	}
+
+	function ajouterInputPays() {
+		var c = document.getElementById('pays');
+		if (c.lastElementChild == null || c.lastElementChild.firstChild == null || c.lastElementChild.firstChild.value !== '') {
+			var div = document.createElement('div');
+			div.className = "form-group";
+			var input = document.createElement('input');
+			input.type = 'text';
+			input.name = 'pays[]';
+			input.list = "liste_pays";
+			input.className = 'form-control';
+			input.onchange = function () {
+				if (this.value === '') {
+					this.parentElement.remove();
 				}
 			};
 			div.appendChild(input);
