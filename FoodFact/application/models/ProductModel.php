@@ -240,7 +240,7 @@ class productModel extends CI_Model {
 		if($crit['matieresGrassesTransformees']==""){$recherche[]=NULL;}else{$recherche[]=$crit['matieresGrassesTransformees'];}
 		if($crit['cholesterol']==""){$recherche[]=NULL;}else{$recherche[]=$crit['cholesterol'];}
 		if($crit['carbo']==""){$recherche[]=NULL;}else{$recherche[]=$crit['carbo'];}
-		if($crit['sucre']==""){$recherche[]=NULL;}else{$recherche[]=$crit['sucre'];}
+		if($crit['sucres']==""){$recherche[]=NULL;}else{$recherche[]=$crit['sucres'];}
 		if($crit['fibresAlimentaires']==""){$recherche[]=NULL;}else{$recherche[]=$crit['fibresAlimentaires'];}
 		if($crit['proteines']==""){$recherche[]=NULL;}else{$recherche[]=$crit['proteines'];}
 		if($crit['sel']==""){$recherche[]=NULL;}else{$recherche[]=$crit['sel'];}
