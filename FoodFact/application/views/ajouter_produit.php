@@ -62,7 +62,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							<th scope="row">NutriScore</th>
 							<td>
 								<select id="nutriGrade" name="nutriGrade" class="custom-select">
-									<option selected="selected">Pas de NutriScore</option>
+									<option value="" selected="selected">Pas de NutriScore</option>
 									<option value="a">A</option>
 									<option value="b">B</option>
 									<option value="c">C</option>

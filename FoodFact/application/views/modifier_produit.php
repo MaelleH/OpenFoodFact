@@ -53,6 +53,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<h2>Additifs</h2>
 				<button type="button" class="btn btn-success mb-2" onclick="ajouterInputAdditif()">Ajouter un additif</button>
 				<div id="additifs">
+					<?php foreach(")
 				</div>
 				<h2>Ingrédients</h2>
 				<button type="button" class="btn btn-success mb-2" onclick="ajouterIngredient('')">Ajouter un ingrédient</button>
