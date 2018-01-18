@@ -25,14 +25,14 @@ class productModel extends CI_Model {
 			}
 			$req=$req."UPPER(product_name) LIKE UPPER('%".$crit['nom']."%') ";
 		}
-		
+
 		if(isset($crit['marque'])){
 			if(!($req === $basereq)){
 				$req = $req."and ";
 			}
 			$req=$req."UPPER(brands) LIKE UPPER('%".$crit['marque']."%') ";
 		}
-		
+
 		if(isset($crit['pays'])){
 			if(!($req === $basereq)){
 				$req = $req."and ";
@@ -40,8 +40,8 @@ class productModel extends CI_Model {
 			$req=$req."id_produit in (select _produit.id_produit from openfoodfacts._payscommercialiseproduit where pays= ? )";
 			$recherche[]=$crit['pays'];
 		}
-		
-		
+
+
 		if(isset($crit['ingredients'])){
 			if(!($req === $basereq)){
 				$req = $req."and ";
@@ -82,7 +82,7 @@ class productModel extends CI_Model {
 				}
 				$req=$req."nutrition_grade_fr=? ";
 				$recherche[]=strtolower($crit['nutriScore']);
-			}	
+			}
 		}
 		if(isset($crit['energie'])){
 			if(!($req === $basereq)){
@@ -146,7 +146,7 @@ class productModel extends CI_Model {
 			}
 			$req=$req."vitamin_a_100g>0 ";
 			$recherche[]=$crit['vitamineA'];
-		}		
+		}
 		if(isset($crit['vitamineC'])){
 			if(!($req === $basereq)){
 				$req = $req."and ";
@@ -222,9 +222,10 @@ class productModel extends CI_Model {
 	public function countAll() {
 		return $this->db->query("select count(*) from openfoodfacts._produit;")->result_array()[0]['count'];
 	}
-	
+
 	public function ajoutProduit($crit,$pays,$addi,$ingr){
 		$basereq = "insert into openfoodfacts._produit(created_t,last_modified_t,product_name,brands,serving_size,nutrition_grade_fr,energy_100g,fat_100g,satured_fat_100g,trans_fat_100g,cholesterol_100g,carbohydrates_100g,sugars_100g,fibers_100g,proteins_100g,salt_100g,sodium_100g,vitamin_a_100g,vitamin_c_100g,calcium_100g,iron_100g,nutrition_score_fr_100g) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+
 		$recherche = [];
 		$recherche[]='now()'; // Le created_t
 		$recherche[]='now()'; // Le last_modified_t
@@ -238,7 +239,7 @@ class productModel extends CI_Model {
 		$recherche[]=$crit['matieresGrassesTransformees'];
 		$recherche[]=$crit['cholesterol'];
 		$recherche[]=$crit['carbo'];
-		$recherche[]=$crit['sucres'];		
+		$recherche[]=$crit['sucres'];
 		$recherche[]=$crit['fibresAlimentaires'];
 		$recherche[]=$crit['proteines'];
 		$recherche[]=$crit['sel'];
@@ -249,14 +250,39 @@ class productModel extends CI_Model {
 		$recherche[]=$crit['fer'];
 		$recherche[]=$crit['scoreNutritif'];
 
-		$insertI = $this->db->query($basereq,$recherche);
-		/*
-		foreach($pays as $nom){
-			$insertP = $this->db->query("insert into _payscommercialiseproduit values(?,?)",array($crit['nom'],$nom));
+		//On vérifie que la marque existe, sinon on la créer
+		if($this->db->query("select * from openfoodfacts._marque where nom=?",$crit['marque'])==NULL){
+			$insertM = $this->db->query("insert into openfoodfacts._marque values(?)",$crit['marque']);
 		}
-		*/
-		
-		return $insertI /*&& $insertP*/ ;
+		//On insert le produit
+
+		$insertI = $this->db->query($basereq,$recherche);
+		$id_produit= $this->db->query("select max(id_produit) as max from openfoodfacts._produit")->result_array;
+
+
+		//On créer les nouveaux pays
+		foreach ($pays as $nom) {
+			if($this->db->query("select * from openfoodfacts._pays where nom=?",$nom)==NULL){
+				$this->db->query("insert into openfoodfacts._pays values(?)",$nom);
+			}
+
+		//On insert les produits et le pays dans la table
+			$insertP = $this->db->query("insert into openfoodfacts._payscommercialiseproduit values(?,?)",array($id_produit['max'],$nom));
+		}
+
+
+		//On insert les additifs dans la table
+		foreach($addi as $nom){
+			if($this->db->query("select * from openfoodfacts._additif where id_additif=?",$nom['id_additif'])==NULL){
+				$this->db->query("insert into openfoodfacts._additif values(?,?)",array($nom));
+			}
+		//On insert les additifs et le produit
+			$insertA = $this->db->query("insert into openfoodfacts._additif(nom) values(?)",array($nom['id_additif'],$id_produit['max']));
+		}
+
+
+
+		return $insertI && $insertP && $insertM && $insertA ;
 	}
 	public function listeAdd(){
 		return $this->db->query("select nom from openfoodfacts._additif;")->result_array();
