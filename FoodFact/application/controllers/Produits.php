@@ -130,6 +130,76 @@ class Produits extends CI_Controller {
 		}
 	}
 
+	public function modifier($id_produit = -1) {
+		if ($id_produit == -1) {
+			show_404();
+		}
+
+		$produit = $this->productModel->getOneByID($id_produit);
+
+
+		if (empty($produit['product'])) {
+			show_404();
+		}
+
+		$this->form_validation->set_rules('nom', 'Nom', 'required');
+
+		if ($this->form_validation->run() == FALSE) {
+			$data = $produit['product'];
+
+			$data['listeAdd']=$this->productModel->listeAdd();
+			$data['listePays']=$this->productModel->listePays();
+			$data['listeIng']=$this->productModel->listeIng();
+			$data['listeMarque']=$this->productModel->listeMarque();
+
+			$data['countries'] = $produit['countries'];
+
+			if (!empty($produit['ingredients'])) {
+				$data['ingredients'] = $produit['ingredients'];
+			}
+
+			if (!empty($produit['additifs'])) {
+				$data['additifs'] = $produit['additifs'];
+			}
+
+			if (!empty($produit['ref'])) {
+				$data['nom_reference'] = $produit['ref'][0]['nom_reference'];
+				$data['url'] = $produit['ref'][0]['url'];
+			}
+
+			$this->load->view('modifier_produit', $data);
+		} else {
+			$produit = [
+				'nom' => $this->input->post('nom'),
+				'marque' => $this->input->post('marque'),
+				'portion' => $this->input->post('portion'),
+				'nutriGrade' => $this->input->post('nutriGrade'),
+				'energie' => $this->input->post('energie'),
+				'matieresGrasses' => $this->input->post('matieresGrasses'),
+				'matieresGrassesSaturees' => $this->input->post('matieresGrassesSaturees'),
+				'matieresGrassesTransformees' => $this->input->post('matieresGrassesTransformees'),
+				'cholesterol' => $this->input->post('cholesterol'),
+				'carbo' => $this->input->post('carbo'),
+				'fibresAlimentaires' => $this->input->post('fibresAlimentaires'),
+				'sucres' => $this->input->post('sucres'),
+				'proteines' => $this->input->post('proteines'),
+				'sel' => $this->input->post('sel'),
+				'vitamineA' => $this->input->post('vitamineA'),
+				'vitamineC' => $this->input->post('vitamineC'),
+				'calcium' => $this->input->post('calcium'),
+				'scoreNutritif' => $this->input->post('scoreNutritif'),
+				'fer' => $this->input->post('fer'),
+				'sodium' => $this->input->post('sodium')
+			];
+
+			$pays = $this->input->post('pays');
+			$additifs = $this->input->post('additifs');
+			$ingredients = $this->input->post('ingredients');
+
+			$this->productModel->ajoutProduit($produit, $pays, $additifs, $ingredients);
+		}
+	}
+
 	public function ajout_ingredients() {
 		$this->load->view('ajouter_produit_ingredients');
 	}
