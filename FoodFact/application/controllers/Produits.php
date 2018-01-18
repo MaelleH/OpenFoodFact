@@ -89,14 +89,11 @@ class Produits extends CI_Controller {
 	}
 
 	public function ajout() {
+		$data = [];
+
 		$this->form_validation->set_rules('nom', 'Nom', 'required');
 
 		if ($this->form_validation->run() == FALSE) {
-			$data['listeAdd']=$this->productModel->listeAdd();
-			$data['listePays']=$this->productModel->listePays();
-			$data['listeIng']=$this->productModel->listeIng();
-			$data['listeMarque']=$this->productModel->listeMarque();
-
 			$this->load->view('ajouter_produit', $data);
 		} else {
 			$produit = [

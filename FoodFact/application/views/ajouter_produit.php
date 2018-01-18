@@ -23,11 +23,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<tbody>
 						<tr>
 							<th scope="row">Nom</th>
-							<td><input class="form-control" type="text" name="nom"/></td>
+							<td><input class="form-control" type="text" name="nom" value="<?php echo set_value('nom'); ?>"/></td>
 						</tr>
 						<tr>
 							<th scope="row">Marque</th>
-							<td><input class="form-control" type="text" name="marque" list="liste_marque"/></td>
+							<td><input class="form-control" type="text" name="marque" list="liste_marque" value="<?php echo set_value('marque'); ?>"/></td>
 						</tr>
 						<tr>
 							<th scope="row">Pays</th>
@@ -38,7 +38,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						</tr>
 						<tr>
 							<th scope="row">Portion</th>
-							<td><input class="form-control" type="text" name="portion"/></td>
+							<td><input class="form-control" type="text" name="portion" value="<?php echo set_value('portion'); ?>"/></td>
 						</tr>
 					</tbody>
 				</table>
@@ -60,79 +60,79 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<tr>
 							<th scope="row">NutriScore</th>
 							<td>
-								<select id="nutriGrade" class="custom-select">
+								<select id="nutriGrade" name="nutriGrade" class="custom-select">
 									<option selected="selected">Pas de NutriScore</option>
-									<option>A</option>
-									<option>B</option>
-									<option>C</option>
-									<option>D</option>
-									<option>E</option>
+									<option value="A">A</option>
+									<option value="B">B</option>
+									<option value="C">C</option>
+									<option value="D">D</option>
+									<option value="E">E</option>
 								</select>
 							</td>
 						</tr>
 						<tr>
 							<th scope="row">Énergie</th>
-							<td><input class="form-control" type="number" name="energie"></input></td>
+							<td><input class="form-control" type="number" name="energie" value="<?php echo set_value('energie'); ?>"></input></td>
 						</tr>
 						<tr>
 							<th scope="row">Graisse</th>
-							<td><input class="form-control" type="number" name="matieresGrasses"></input></td>
+							<td><input class="form-control" type="number" name="matieresGrasses" value="<?php echo set_value('matieresGrasses'); ?>"></input></td>
 						</tr>
 						<tr>
 							<th scope="row">Graisse saturées</th>
-							<td><input class="form-control" type="number" name="matieresGrassesSaturees"></input></td>
+							<td><input class="form-control" type="number" name="matieresGrassesSaturees" value="<?php echo set_value('matieresGrassesSaturees'); ?>"></input></td>
 						</tr>
 						<tr>
 							<th scope="row">Graisse transformées</th>
-							<td><input class="form-control" type="number" name="matieresGrassesTransformees"></input></td>
+							<td><input class="form-control" type="number" name="matieresGrassesTransformees" value="<?php echo set_value('matieresGrassesTransformees'); ?>"></input></td>
 						</tr>
 						<tr>
 							<th scope="row">Choléstérol</th>
-							<td><input class="form-control" type="number" name="cholesterol"></input></td>
+							<td><input class="form-control" type="number" name="cholesterol" value="<?php echo set_value('cholesterol'); ?>"></input></td>
 						</tr>
 						<tr>
 							<th scope="row">Carbohydrates</th>
-							<td><input class="form-control" type="number" name="carbo"></input></td>
+							<td><input class="form-control" type="number" name="carbo" value="<?php echo set_value('carbo'); ?>"></input></td>
 						</tr>
 						<tr>
 							<th scope="row">Sucres</th>
-							<td><input class="form-control" type="number" name="sucres"></input></td>
+							<td><input class="form-control" type="number" name="sucres" value="<?php echo set_value('sucres'); ?>"></input></td>
 						</tr>
 						<tr>
 							<th scope="row">Fibres</th>
-							<td><input class="form-control" type="number" name="fibresAlimentaires"></input></td>
+							<td><input class="form-control" type="number" name="fibresAlimentaires" value="<?php echo set_value('fibresAlimentaires'); ?>"></input></td>
 						</tr>
 						<tr>
 							<th scope="row">Protéines</th>
-							<td><input class="form-control" type="number" name="proteines"></input></td>
+							<td><input class="form-control" type="number" name="proteines" value="<?php echo set_value('proteines'); ?>"></input></td>
 						</tr>
 						<tr>
 							<th scope="row">Sel</th>
-							<td><input class="form-control" type="number" name="sel"></input></td>
+							<td><input class="form-control" type="number" name="sel" value="<?php echo set_value('sel'); ?>"></input></td>
 						</tr>
 						<tr>
 							<th scope="row">Sodium</th>
-							<td><input class="form-control" type="number" name="sodium"></input></td>
+							<td><input class="form-control" type="number" name="sodium" value="<?php echo set_value('sodium'); ?>"></input></td>
 						</tr>
 						<tr>
 							<th scope="row">Vitamine A</th>
-							<td><input class="form-control" type="number" name="vitamineA"></input></td>
+							<td><input class="form-control" type="number" name="vitamineA" value="<?php echo set_value('vitamineA'); ?>"></input></td>
 						</tr>
 						<tr>
 							<th scope="row">Vitamine C</th>
-							<td><input class="form-control" type="number" name="vitamineC"></input></td>
+							<td><input class="form-control" type="number" name="vitamineC" value="<?php echo set_value('vitamineC'); ?>"></input></td>
 						</tr>
 						<tr>
 							<th scope="row">Calcium</th>
-							<td><input class="form-control" type="number" name="calcium"></input></td>
+							<td><input class="form-control" type="number" name="calcium" value="<?php echo set_value('calcium'); ?>"></input></td>
 						</tr>
 						<tr>
 							<th scope="row">Fer</th>
-							<td><input class="form-control" type="number" name="fer"></input></td>
+							<td><input class="form-control" type="number" name="fer" value="<?php echo set_value('fer'); ?>"></input></td>
 						</tr>
 						<tr>
 							<th scope="row">Score nutritif</th>
-							<td><input class="form-control" type="number" name="scoreNutritif"></input></td>
+							<td><input class="form-control" type="number" name="scoreNutritif" value="<?php echo set_value('scoreNutritif'); ?>"></input></td>
 						</tr>
 					</tbody>
 				</table>
