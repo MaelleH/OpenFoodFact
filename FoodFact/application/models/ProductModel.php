@@ -3,6 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class productModel extends CI_Model {
 	public function __construct() {
+		parent::__construct();
 		$this->load->database();
 	}
 
@@ -362,6 +363,10 @@ class productModel extends CI_Model {
 
 
 		return true;
+	}
+
+	public function enleverProduit($id_produit) {
+		$this->db->query("delete from openfoodfacts._produit where id_produit = '$id_produit';");
 	}
 
 	public function listeAdd() {

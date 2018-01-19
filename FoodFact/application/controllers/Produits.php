@@ -131,11 +131,6 @@ class Produits extends CI_Controller {
 			}
 			$ingredients = (array)$this->input->post('ingredients');
 
-			print_r($produit);
-			print_r($pays);
-			print_r($additifs);
-			print_r($ingredients);
-
 			$this->productModel->ajoutProduit($produit, $pays, $additifs, $ingredients);
 			//redirect();
 		}
@@ -204,10 +199,16 @@ class Produits extends CI_Controller {
 			];
 
 			$pays = (array)$this->input->post('pays');
-			$additifs = (array)$this->input->post('additifs');
-			$ingredients = $this->input->post('ingredients');
+			$additifsBrut = (array)$this->input->post('additifs');
+			$additifs = [];
+			foreach($additifsBrut as $additif) {
+				$additif = explode(" - ", $additif);
+				$additifs[] = ['id_additif' => $additif[0], 'nom' => $additif[1]];
+			}
+			$ingredients = (array)$this->input->post('ingredients');
 
-			$this->productModel->modifierProduit($produit, $pays, $additifs, $ingredients);
+			$this->productModel->enleverProduit($id_produit);
+			$this->productModel->ajoutProduit($produit, $pays, $additifs, $ingredients, $id_produit);
 		}
 	}
 
