@@ -127,6 +127,7 @@ class Produits extends CI_Controller {
 			$ingredients = $this->input->post('ingredients');
 
 			$this->productModel->ajoutProduit($produit, $pays, $additifs, $ingredients);
+			//redirect();
 		}
 	}
 
@@ -196,7 +197,7 @@ class Produits extends CI_Controller {
 			$additifs = $this->input->post('additifs');
 			$ingredients = $this->input->post('ingredients');
 
-			$this->productModel->ajoutProduit($produit, $pays, $additifs, $ingredients);
+			$this->productModel->modifierProduit($produit, $pays, $additifs, $ingredients);
 		}
 	}
 

@@ -68,6 +68,8 @@ if (isset($valeur)) {
                     </p>
                     <p class="mt-4">
                         <a class="btn" href="<?php echo site_url(''); ?>">Revenir à l’accueil</a>
+                    	<a href="<?php echo site_url('produits/modifier/' . $id_produit); ?>"
+                       class="btn btn-primary btn-sm" role="button">Modifier</a>
                     </p>
                 </div>
             </div>

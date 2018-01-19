@@ -53,7 +53,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<h2>Additifs</h2>
 				<button type="button" class="btn btn-success mb-2" onclick="ajouterInputAdditif()">Ajouter un additif</button>
 				<div id="additifs">
-					<?php foreach(")
+					<?php if(isset($additifs)): ?>
+						<?php foreach($additifs as $additif): ?>
+							<div class="form-group">
+								<input class="form-control" type="text" name="additifs[]" list="liste_additifs" onchange="deleteme(this)" value="<?php echo $additif['id_additif']; ?> - <?php echo $additif['nom']; ?>"/>
+							</div>
+						<?php endforeach; ?>
+					<?php endif; ?>
 				</div>
 				<h2>Ingrédients</h2>
 				<button type="button" class="btn btn-success mb-2" onclick="ajouterIngredient('')">Ajouter un ingrédient</button>
@@ -68,7 +74,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							<th scope="row">NutriScore</th>
 							<td>
 								<select id="nutriGrade" name="nutriGrade" class="custom-select">
-									<option <?php if (!isset($nutrition_grade_fr)) echo 'selected="selected"'; ?>>Pas de NutriScore</option>
+									<option value="" <?php if (!isset($nutrition_grade_fr)) echo 'selected="selected"'; ?>>Pas de NutriScore</option>
 									<option value="a" <?php if (strtolower($nutrition_grade_fr) == 'a') echo 'selected="selected"'; ?>>A</option>
 									<option value="b" <?php if (strtolower($nutrition_grade_fr) == 'b') echo 'selected="selected"'; ?>>B</option>
 									<option value="c" <?php if (strtolower($nutrition_grade_fr) == 'c') echo 'selected="selected"'; ?>>C</option>

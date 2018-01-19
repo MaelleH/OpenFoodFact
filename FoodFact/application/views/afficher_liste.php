@@ -63,6 +63,8 @@ $this->load->helper('url');
                 <td>
                     <a href="<?php echo site_url('produits/consulter/' . $produit['id_produit']); ?>"
                        class="btn btn-primary btn-sm" role="button">Consulter</a>
+                    <a href="<?php echo site_url('produits/modifier/' . $produit['id_produit']); ?>"
+                       class="btn btn-warning btn-sm" role="button">Modifier</a>
                 </td>
             </tr>
 		<?php endforeach; ?>
