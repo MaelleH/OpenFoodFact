@@ -15,7 +15,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body>
 <div class="container">
 	<?php echo validation_errors(); ?>
-	<?php echo form_open('produits/ajout'); ?>
+	<?php echo form_open('produits/modifier/' . $id_produit); ?>
 		<div class="row">
 			<div class="col">
 				<h1>Caractéristiques</h1>

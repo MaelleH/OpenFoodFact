@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="427f708f-988f-4984-a2ef-a698661aa71e" name="Default" comment="Préparation pour la fin de la modification">
+    <list default="true" id="427f708f-988f-4984-a2ef-a698661aa71e" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/FoodFact/application/controllers/Produits.php" afterPath="$PROJECT_DIR$/FoodFact/application/controllers/Produits.php" />
+      <change beforePath="$PROJECT_DIR$/FoodFact/application/models/ProductModel.php" afterPath="$PROJECT_DIR$/FoodFact/application/models/ProductModel.php" />
       <change beforePath="$PROJECT_DIR$/FoodFact/application/views/modifier_produit.php" afterPath="$PROJECT_DIR$/FoodFact/application/views/modifier_produit.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -60,7 +60,16 @@
         <item name="onxtrzmi: database" type="6d9b600a:PostgresImplModel$Database" />
         <item name="openfoodfacts: schema" type="a16502c0:PostgresImplModel$Schema" />
         <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="_produit: table" type="a93d6ac6:PostgresImplModel$LocalTable" />
+        <item name="_additifcontenus: table" type="a93d6ac6:PostgresImplModel$LocalTable" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="bdd antoine off" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="onxtrzmi: database" type="6d9b600a:PostgresImplModel$Database" />
+        <item name="openfoodfacts: schema" type="a16502c0:PostgresImplModel$Schema" />
+        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="_ingredientcontenusproduit: table" type="a93d6ac6:PostgresImplModel$LocalTable" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
@@ -74,48 +83,52 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Produits.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Produits.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FoodFact/application/controllers/Produits.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="198" column="14" lean-forward="false" selection-start-line="198" selection-start-column="14" selection-end-line="198" selection-end-column="14" />
+            <state relative-caret-position="638">
+              <caret line="213" column="5" lean-forward="true" selection-start-line="213" selection-start-column="5" selection-end-line="213" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProductModel.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ProductModel.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/FoodFact/application/models/ProductModel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="395">
-              <caret line="239" column="41" lean-forward="true" selection-start-line="239" selection-start-column="41" selection-end-line="239" selection-end-column="41" />
+            <state relative-caret-position="246">
+              <caret line="379" column="77" lean-forward="false" selection-start-line="379" selection-start-column="77" selection-end-line="379" selection-end-column="77" />
               <folding>
-                <marker date="1516380229514" expanded="true" signature="266:466" ph="SELECT _prod... _produit" />
-                <marker date="1516380229514" expanded="true" signature="4815:4964" ph="SELECT count... _produit" />
-                <marker date="1516380229514" expanded="true" signature="5056:5144" ph="select id_pr... _produit" />
-                <marker date="1516380229514" expanded="true" signature="5344:5432" ph="select id_pr... _produit" />
-                <marker date="1516380229514" expanded="true" signature="5555:5776" ph="select _prod... _produit" />
-                <marker date="1516380229514" expanded="true" signature="5843:5932" ph="select pays _payscommercialiseproduit" />
-                <marker date="1516380229514" expanded="true" signature="6013:6112" ph="select id_in... _ingredientcontenusproduit" />
-                <marker date="1516380229514" expanded="true" signature="6185:6312" ph="select id_ad... _additif" />
-                <marker date="1516380229514" expanded="true" signature="6363:6460" ph="select url, _reference" />
-                <marker date="1516380229514" expanded="true" signature="6559:6651" ph="select ingre... _ingredient" />
-                <marker date="1516380229514" expanded="true" signature="6789:6914" ph="select id_in... _ingredientcontenusingredient" />
-                <marker date="1516380229514" expanded="true" signature="7523:7566" ph="SELECT count... _produit" />
-                <marker date="1516380229514" expanded="true" signature="7716:8136" ph="INSERT INTO openfoodfacts._produit... " />
-                <marker date="1516380229514" expanded="true" signature="10543:10597" ph="SELECT * FRO... _marque" />
-                <marker date="1516380229514" expanded="true" signature="10668:10711" ph="INSERT INTO openfoodfacts._marque... " />
-                <marker date="1516380229514" expanded="true" signature="10977:11029" ph="select count... _pays" />
-                <marker date="1516380229514" expanded="true" signature="11090:11131" ph="INSERT INTO openfoodfacts._pays... " />
-                <marker date="1516380229514" expanded="true" signature="11221:11284" ph="INSERT INTO openfoodfacts._payscommercialiseproduit... " />
-                <marker date="1516380229514" expanded="true" signature="11414:11476" ph="select * fro... _additif" />
-                <marker date="1516380229514" expanded="true" signature="11551:11597" ph="INSERT INTO openfoodfacts._additif... " />
-                <marker date="1516380229514" expanded="true" signature="11675:11754" ph="INSERT INTO openfoodfacts._additifcontenus... " />
-                <marker date="1516380229514" expanded="true" signature="11890:11957" ph="delete * fro... " />
-                <marker date="1516380229514" expanded="true" signature="12023:12059" ph="SELECT * FRO... _additif" />
-                <marker date="1516380229514" expanded="true" signature="12141:12202" ph="select ingre... _ingredient" />
-                <marker date="1516380229514" expanded="true" signature="12285:12320" ph="SELECT nom F... _pays" />
-                <marker date="1516380229514" expanded="true" signature="12405:12442" ph="select nom f... _marque" />
+                <marker date="1516389021755" expanded="true" signature="266:466" ph="SELECT _prod... _produit" />
+                <marker date="1516389021755" expanded="true" signature="4815:4964" ph="SELECT count... _produit" />
+                <marker date="1516389021755" expanded="true" signature="5056:5144" ph="select id_pr... _produit" />
+                <marker date="1516389021755" expanded="true" signature="5344:5432" ph="select id_pr... _produit" />
+                <marker date="1516389021755" expanded="true" signature="5555:5776" ph="select _prod... _produit" />
+                <marker date="1516389021755" expanded="true" signature="5843:5932" ph="select pays _payscommercialiseproduit" />
+                <marker date="1516389021755" expanded="true" signature="6013:6112" ph="select id_in... _ingredientcontenusproduit" />
+                <marker date="1516389021755" expanded="true" signature="6185:6312" ph="select id_ad... _additif" />
+                <marker date="1516389021755" expanded="true" signature="6363:6460" ph="select url, _reference" />
+                <marker date="1516389021755" expanded="true" signature="6559:6651" ph="select ingre... _ingredient" />
+                <marker date="1516389021755" expanded="true" signature="6789:6914" ph="select id_in... _ingredientcontenusingredient" />
+                <marker date="1516389021755" expanded="true" signature="7523:7566" ph="SELECT count... _produit" />
+                <marker date="1516389021755" expanded="true" signature="7733:8153" ph="INSERT INTO openfoodfacts._produit... " />
+                <marker date="1516389021755" expanded="true" signature="8172:8605" ph="INSERT INTO openfoodfacts._produit... " />
+                <marker date="1516389021755" expanded="true" signature="11066:11120" ph="SELECT count... _marque" />
+                <marker date="1516389021755" expanded="true" signature="11191:11234" ph="INSERT INTO openfoodfacts._marque... " />
+                <marker date="1516389021755" expanded="true" signature="11619:11671" ph="SELECT count... _pays" />
+                <marker date="1516389021755" expanded="true" signature="11732:11773" ph="INSERT INTO openfoodfacts._pays... " />
+                <marker date="1516389021755" expanded="true" signature="11863:11926" ph="INSERT INTO openfoodfacts._payscommercialiseproduit... " />
+                <marker date="1516389021755" expanded="true" signature="12056:12118" ph="SELECT count... _additif" />
+                <marker date="1516389021755" expanded="true" signature="12193:12239" ph="INSERT INTO openfoodfacts._additif... " />
+                <marker date="1516389021755" expanded="true" signature="12317:12396" ph="INSERT INTO openfoodfacts._additifcontenus... " />
+                <marker date="1516389021755" expanded="true" signature="12539:12614" ph="delete from openfoodfacts._additifcontenus... " />
+                <marker date="1516389021755" expanded="true" signature="12639:12724" ph="delete from openfoodfacts._ingredientcontenusproduit... " />
+                <marker date="1516389021755" expanded="true" signature="12749:12833" ph="delete from openfoodfacts._payscommercialiseproduit... " />
+                <marker date="1516389021755" expanded="true" signature="12858:12925" ph="delete * fro... " />
+                <marker date="1516389021755" expanded="true" signature="12991:13027" ph="SELECT * FRO... _additif" />
+                <marker date="1516389021755" expanded="true" signature="13109:13170" ph="select ingre... _ingredient" />
+                <marker date="1516389021755" expanded="true" signature="13253:13288" ph="SELECT nom F... _pays" />
+                <marker date="1516389021755" expanded="true" signature="13373:13410" ph="select nom f... _marque" />
               </folding>
             </state>
           </provider>
@@ -154,30 +167,30 @@
       <file leaf-file-name="modifier_produit.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FoodFact/application/views/modifier_produit.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="468">
-              <caret line="65" column="32" lean-forward="true" selection-start-line="65" selection-start-column="32" selection-end-line="65" selection-end-column="32" />
+            <state relative-caret-position="306">
+              <caret line="17" column="59" lean-forward="false" selection-start-line="17" selection-start-column="59" selection-end-line="17" selection-end-column="59" />
               <folding>
-                <marker date="1516380685866" expanded="true" signature="3631:3764" ph="..." />
-                <marker date="1516380685866" expanded="true" signature="3830:3971" ph="..." />
-                <marker date="1516380685866" expanded="true" signature="4042:4200" ph="..." />
-                <marker date="1516380685866" expanded="true" signature="4287:4453" ph="..." />
-                <marker date="1516380685866" expanded="true" signature="4542:4683" ph="..." />
-                <marker date="1516380685866" expanded="true" signature="4758:4895" ph="..." />
-                <marker date="1516380685866" expanded="true" signature="4966:5097" ph="..." />
-                <marker date="1516380685866" expanded="true" signature="5162:5305" ph="..." />
-                <marker date="1516380685866" expanded="true" signature="5382:5519" ph="..." />
-                <marker date="1516380685866" expanded="true" signature="5589:5714" ph="..." />
-                <marker date="1516380685866" expanded="true" signature="5774:5905" ph="..." />
-                <marker date="1516380685866" expanded="true" signature="5970:6108" ph="..." />
-                <marker date="1516380685866" expanded="true" signature="6179:6317" ph="..." />
-                <marker date="1516380685866" expanded="true" signature="6388:6521" ph="..." />
-                <marker date="1516380685866" expanded="true" signature="6588:6713" ph="..." />
-                <marker date="1516380685866" expanded="true" signature="6773:6919" ph="..." />
-                <marker date="1516380685866" expanded="true" signature="7283:7356" ph="..." />
-                <marker date="1516380685866" expanded="true" signature="7474:7556" ph="..." />
-                <marker date="1516380685866" expanded="true" signature="7636:7712" ph="..." />
-                <marker date="1516380685866" expanded="true" signature="7799:7872" ph="..." />
-                <marker date="1516380685866" expanded="true" signature="7934:8022" ph="..." />
+                <marker date="1516388873666" expanded="true" signature="3649:3782" ph="..." />
+                <marker date="1516388873666" expanded="true" signature="3848:3989" ph="..." />
+                <marker date="1516388873666" expanded="true" signature="4060:4218" ph="..." />
+                <marker date="1516388873666" expanded="true" signature="4305:4471" ph="..." />
+                <marker date="1516388873666" expanded="true" signature="4560:4701" ph="..." />
+                <marker date="1516388873666" expanded="true" signature="4776:4913" ph="..." />
+                <marker date="1516388873666" expanded="true" signature="4984:5115" ph="..." />
+                <marker date="1516388873666" expanded="true" signature="5180:5323" ph="..." />
+                <marker date="1516388873666" expanded="true" signature="5400:5537" ph="..." />
+                <marker date="1516388873666" expanded="true" signature="5607:5732" ph="..." />
+                <marker date="1516388873666" expanded="true" signature="5792:5923" ph="..." />
+                <marker date="1516388873666" expanded="true" signature="5988:6126" ph="..." />
+                <marker date="1516388873666" expanded="true" signature="6197:6335" ph="..." />
+                <marker date="1516388873666" expanded="true" signature="6406:6539" ph="..." />
+                <marker date="1516388873666" expanded="true" signature="6606:6731" ph="..." />
+                <marker date="1516388873666" expanded="true" signature="6791:6937" ph="..." />
+                <marker date="1516388873666" expanded="true" signature="7301:7374" ph="..." />
+                <marker date="1516388873666" expanded="true" signature="7492:7574" ph="..." />
+                <marker date="1516388873666" expanded="true" signature="7654:7730" ph="..." />
+                <marker date="1516388873666" expanded="true" signature="7817:7890" ph="..." />
+                <marker date="1516388873666" expanded="true" signature="7952:8040" ph="..." />
               </folding>
             </state>
           </provider>
@@ -246,9 +259,9 @@
         <option value="$PROJECT_DIR$/FoodFact/application/views/ajouter_produit.php" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/6b9c1798-651e-404d-ac66-40c93938cc97/console.sql" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/6b9c1798-651e-404d-ac66-40c93938cc97/console_1.sql" />
-        <option value="$PROJECT_DIR$/FoodFact/application/models/ProductModel.php" />
-        <option value="$PROJECT_DIR$/FoodFact/application/views/modifier_produit.php" />
         <option value="$PROJECT_DIR$/FoodFact/application/controllers/Produits.php" />
+        <option value="$PROJECT_DIR$/FoodFact/application/views/modifier_produit.php" />
+        <option value="$PROJECT_DIR$/FoodFact/application/models/ProductModel.php" />
       </list>
     </option>
   </component>
@@ -342,6 +355,116 @@
       <recent name="$PROJECT_DIR$/FoodFact/assets/css" />
     </key>
   </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/FoodFact/application/models/ProductModel.php</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -375,7 +498,7 @@
       <workItem from="1513296475587" duration="37000" />
       <workItem from="1513297933676" duration="126000" />
       <workItem from="1513527736230" duration="6858000" />
-      <workItem from="1516376876561" duration="4160000" />
+      <workItem from="1516376876561" duration="6876000" />
     </task>
     <task id="LOCAL-00001" summary="L’ajout fonctionne">
       <created>1516380101117</created>
@@ -391,11 +514,18 @@
       <option name="project" value="LOCAL" />
       <updated>1516380358125</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Plus que quelques modifications du modèle.">
+      <created>1516381056022</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1516381056022</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29798000" />
+    <option name="totallyTimeSpent" value="32514000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="0" width="1920" height="1061" extended-state="0" />
@@ -406,9 +536,9 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36188436" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21925133" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36188436" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21925133" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32941177" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3304813" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -431,7 +561,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="L’ajout fonctionne" />
     <MESSAGE value="Préparation pour la fin de la modification" />
-    <option name="LAST_COMMIT_MESSAGE" value="Préparation pour la fin de la modification" />
+    <MESSAGE value="Plus que quelques modifications du modèle." />
+    <option name="LAST_COMMIT_MESSAGE" value="Plus que quelques modifications du modèle." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -498,32 +629,36 @@
         <state relative-caret-position="3582">
           <caret line="199" column="0" lean-forward="false" selection-start-line="199" selection-start-column="0" selection-end-line="199" selection-end-column="0" />
           <folding>
-            <marker date="1516380229514" expanded="true" signature="266:466" ph="SELECT _prod... _produit" />
-            <marker date="1516380229514" expanded="true" signature="4815:4964" ph="SELECT count... _produit" />
-            <marker date="1516380229514" expanded="true" signature="5056:5144" ph="select id_pr... _produit" />
-            <marker date="1516380229514" expanded="true" signature="5344:5432" ph="select id_pr... _produit" />
-            <marker date="1516380229514" expanded="true" signature="5555:5776" ph="select _prod... _produit" />
-            <marker date="1516380229514" expanded="true" signature="5843:5932" ph="select pays _payscommercialiseproduit" />
-            <marker date="1516380229514" expanded="true" signature="6013:6112" ph="select id_in... _ingredientcontenusproduit" />
-            <marker date="1516380229514" expanded="true" signature="6185:6312" ph="select id_ad... _additif" />
-            <marker date="1516380229514" expanded="true" signature="6363:6460" ph="select url, _reference" />
-            <marker date="1516380229514" expanded="true" signature="6559:6651" ph="select ingre... _ingredient" />
-            <marker date="1516380229514" expanded="true" signature="6789:6914" ph="select id_in... _ingredientcontenusingredient" />
-            <marker date="1516380229514" expanded="true" signature="7523:7566" ph="SELECT count... _produit" />
-            <marker date="1516380229514" expanded="true" signature="7716:8136" ph="INSERT INTO openfoodfacts._produit... " />
-            <marker date="1516380229514" expanded="true" signature="10543:10597" ph="SELECT * FRO... _marque" />
-            <marker date="1516380229514" expanded="true" signature="10668:10711" ph="INSERT INTO openfoodfacts._marque... " />
-            <marker date="1516380229514" expanded="true" signature="10977:11029" ph="select count... _pays" />
-            <marker date="1516380229514" expanded="true" signature="11090:11131" ph="INSERT INTO openfoodfacts._pays... " />
-            <marker date="1516380229514" expanded="true" signature="11221:11284" ph="INSERT INTO openfoodfacts._payscommercialiseproduit... " />
-            <marker date="1516380229514" expanded="true" signature="11414:11476" ph="select * fro... _additif" />
-            <marker date="1516380229514" expanded="true" signature="11551:11597" ph="INSERT INTO openfoodfacts._additif... " />
-            <marker date="1516380229514" expanded="true" signature="11675:11754" ph="INSERT INTO openfoodfacts._additifcontenus... " />
-            <marker date="1516380229514" expanded="true" signature="11890:11957" ph="delete * fro... " />
-            <marker date="1516380229514" expanded="true" signature="12023:12059" ph="SELECT * FRO... _additif" />
-            <marker date="1516380229514" expanded="true" signature="12141:12202" ph="select ingre... _ingredient" />
-            <marker date="1516380229514" expanded="true" signature="12285:12320" ph="SELECT nom F... _pays" />
-            <marker date="1516380229514" expanded="true" signature="12405:12442" ph="select nom f... _marque" />
+            <marker date="1516389021755" expanded="true" signature="266:466" ph="SELECT _prod... _produit" />
+            <marker date="1516389021755" expanded="true" signature="4815:4964" ph="SELECT count... _produit" />
+            <marker date="1516389021755" expanded="true" signature="5056:5144" ph="select id_pr... _produit" />
+            <marker date="1516389021755" expanded="true" signature="5344:5432" ph="select id_pr... _produit" />
+            <marker date="1516389021755" expanded="true" signature="5555:5776" ph="select _prod... _produit" />
+            <marker date="1516389021755" expanded="true" signature="5843:5932" ph="select pays _payscommercialiseproduit" />
+            <marker date="1516389021755" expanded="true" signature="6013:6112" ph="select id_in... _ingredientcontenusproduit" />
+            <marker date="1516389021755" expanded="true" signature="6185:6312" ph="select id_ad... _additif" />
+            <marker date="1516389021755" expanded="true" signature="6363:6460" ph="select url, _reference" />
+            <marker date="1516389021755" expanded="true" signature="6559:6651" ph="select ingre... _ingredient" />
+            <marker date="1516389021755" expanded="true" signature="6789:6914" ph="select id_in... _ingredientcontenusingredient" />
+            <marker date="1516389021755" expanded="true" signature="7523:7566" ph="SELECT count... _produit" />
+            <marker date="1516389021755" expanded="true" signature="7733:8153" ph="INSERT INTO openfoodfacts._produit... " />
+            <marker date="1516389021755" expanded="true" signature="8172:8605" ph="INSERT INTO openfoodfacts._produit... " />
+            <marker date="1516389021755" expanded="true" signature="11066:11120" ph="SELECT count... _marque" />
+            <marker date="1516389021755" expanded="true" signature="11191:11234" ph="INSERT INTO openfoodfacts._marque... " />
+            <marker date="1516389021755" expanded="true" signature="11619:11671" ph="SELECT count... _pays" />
+            <marker date="1516389021755" expanded="true" signature="11732:11773" ph="INSERT INTO openfoodfacts._pays... " />
+            <marker date="1516389021755" expanded="true" signature="11863:11926" ph="INSERT INTO openfoodfacts._payscommercialiseproduit... " />
+            <marker date="1516389021755" expanded="true" signature="12056:12118" ph="SELECT count... _additif" />
+            <marker date="1516389021755" expanded="true" signature="12193:12239" ph="INSERT INTO openfoodfacts._additif... " />
+            <marker date="1516389021755" expanded="true" signature="12317:12396" ph="INSERT INTO openfoodfacts._additifcontenus... " />
+            <marker date="1516389021755" expanded="true" signature="12539:12614" ph="delete from openfoodfacts._additifcontenus... " />
+            <marker date="1516389021755" expanded="true" signature="12639:12724" ph="delete from openfoodfacts._ingredientcontenusproduit... " />
+            <marker date="1516389021755" expanded="true" signature="12749:12833" ph="delete from openfoodfacts._payscommercialiseproduit... " />
+            <marker date="1516389021755" expanded="true" signature="12858:12925" ph="delete * fro... " />
+            <marker date="1516389021755" expanded="true" signature="12991:13027" ph="SELECT * FRO... _additif" />
+            <marker date="1516389021755" expanded="true" signature="13109:13170" ph="select ingre... _ingredient" />
+            <marker date="1516389021755" expanded="true" signature="13253:13288" ph="SELECT nom F... _pays" />
+            <marker date="1516389021755" expanded="true" signature="13373:13410" ph="select nom f... _marque" />
           </folding>
         </state>
       </provider>
@@ -588,32 +723,36 @@
         <state relative-caret-position="3582">
           <caret line="199" column="0" lean-forward="true" selection-start-line="199" selection-start-column="0" selection-end-line="199" selection-end-column="0" />
           <folding>
-            <marker date="1516380229514" expanded="true" signature="266:466" ph="SELECT _prod... _produit" />
-            <marker date="1516380229514" expanded="true" signature="4815:4964" ph="SELECT count... _produit" />
-            <marker date="1516380229514" expanded="true" signature="5056:5144" ph="select id_pr... _produit" />
-            <marker date="1516380229514" expanded="true" signature="5344:5432" ph="select id_pr... _produit" />
-            <marker date="1516380229514" expanded="true" signature="5555:5776" ph="select _prod... _produit" />
-            <marker date="1516380229514" expanded="true" signature="5843:5932" ph="select pays _payscommercialiseproduit" />
-            <marker date="1516380229514" expanded="true" signature="6013:6112" ph="select id_in... _ingredientcontenusproduit" />
-            <marker date="1516380229514" expanded="true" signature="6185:6312" ph="select id_ad... _additif" />
-            <marker date="1516380229514" expanded="true" signature="6363:6460" ph="select url, _reference" />
-            <marker date="1516380229514" expanded="true" signature="6559:6651" ph="select ingre... _ingredient" />
-            <marker date="1516380229514" expanded="true" signature="6789:6914" ph="select id_in... _ingredientcontenusingredient" />
-            <marker date="1516380229514" expanded="true" signature="7523:7566" ph="SELECT count... _produit" />
-            <marker date="1516380229514" expanded="true" signature="7716:8136" ph="INSERT INTO openfoodfacts._produit... " />
-            <marker date="1516380229514" expanded="true" signature="10543:10597" ph="SELECT * FRO... _marque" />
-            <marker date="1516380229514" expanded="true" signature="10668:10711" ph="INSERT INTO openfoodfacts._marque... " />
-            <marker date="1516380229514" expanded="true" signature="10977:11029" ph="select count... _pays" />
-            <marker date="1516380229514" expanded="true" signature="11090:11131" ph="INSERT INTO openfoodfacts._pays... " />
-            <marker date="1516380229514" expanded="true" signature="11221:11284" ph="INSERT INTO openfoodfacts._payscommercialiseproduit... " />
-            <marker date="1516380229514" expanded="true" signature="11414:11476" ph="select * fro... _additif" />
-            <marker date="1516380229514" expanded="true" signature="11551:11597" ph="INSERT INTO openfoodfacts._additif... " />
-            <marker date="1516380229514" expanded="true" signature="11675:11754" ph="INSERT INTO openfoodfacts._additifcontenus... " />
-            <marker date="1516380229514" expanded="true" signature="11890:11957" ph="delete * fro... " />
-            <marker date="1516380229514" expanded="true" signature="12023:12059" ph="SELECT * FRO... _additif" />
-            <marker date="1516380229514" expanded="true" signature="12141:12202" ph="select ingre... _ingredient" />
-            <marker date="1516380229514" expanded="true" signature="12285:12320" ph="SELECT nom F... _pays" />
-            <marker date="1516380229514" expanded="true" signature="12405:12442" ph="select nom f... _marque" />
+            <marker date="1516389021755" expanded="true" signature="266:466" ph="SELECT _prod... _produit" />
+            <marker date="1516389021755" expanded="true" signature="4815:4964" ph="SELECT count... _produit" />
+            <marker date="1516389021755" expanded="true" signature="5056:5144" ph="select id_pr... _produit" />
+            <marker date="1516389021755" expanded="true" signature="5344:5432" ph="select id_pr... _produit" />
+            <marker date="1516389021755" expanded="true" signature="5555:5776" ph="select _prod... _produit" />
+            <marker date="1516389021755" expanded="true" signature="5843:5932" ph="select pays _payscommercialiseproduit" />
+            <marker date="1516389021755" expanded="true" signature="6013:6112" ph="select id_in... _ingredientcontenusproduit" />
+            <marker date="1516389021755" expanded="true" signature="6185:6312" ph="select id_ad... _additif" />
+            <marker date="1516389021755" expanded="true" signature="6363:6460" ph="select url, _reference" />
+            <marker date="1516389021755" expanded="true" signature="6559:6651" ph="select ingre... _ingredient" />
+            <marker date="1516389021755" expanded="true" signature="6789:6914" ph="select id_in... _ingredientcontenusingredient" />
+            <marker date="1516389021755" expanded="true" signature="7523:7566" ph="SELECT count... _produit" />
+            <marker date="1516389021755" expanded="true" signature="7733:8153" ph="INSERT INTO openfoodfacts._produit... " />
+            <marker date="1516389021755" expanded="true" signature="8172:8605" ph="INSERT INTO openfoodfacts._produit... " />
+            <marker date="1516389021755" expanded="true" signature="11066:11120" ph="SELECT count... _marque" />
+            <marker date="1516389021755" expanded="true" signature="11191:11234" ph="INSERT INTO openfoodfacts._marque... " />
+            <marker date="1516389021755" expanded="true" signature="11619:11671" ph="SELECT count... _pays" />
+            <marker date="1516389021755" expanded="true" signature="11732:11773" ph="INSERT INTO openfoodfacts._pays... " />
+            <marker date="1516389021755" expanded="true" signature="11863:11926" ph="INSERT INTO openfoodfacts._payscommercialiseproduit... " />
+            <marker date="1516389021755" expanded="true" signature="12056:12118" ph="SELECT count... _additif" />
+            <marker date="1516389021755" expanded="true" signature="12193:12239" ph="INSERT INTO openfoodfacts._additif... " />
+            <marker date="1516389021755" expanded="true" signature="12317:12396" ph="INSERT INTO openfoodfacts._additifcontenus... " />
+            <marker date="1516389021755" expanded="true" signature="12539:12614" ph="delete from openfoodfacts._additifcontenus... " />
+            <marker date="1516389021755" expanded="true" signature="12639:12724" ph="delete from openfoodfacts._ingredientcontenusproduit... " />
+            <marker date="1516389021755" expanded="true" signature="12749:12833" ph="delete from openfoodfacts._payscommercialiseproduit... " />
+            <marker date="1516389021755" expanded="true" signature="12858:12925" ph="delete * fro... " />
+            <marker date="1516389021755" expanded="true" signature="12991:13027" ph="SELECT * FRO... _additif" />
+            <marker date="1516389021755" expanded="true" signature="13109:13170" ph="select ingre... _ingredient" />
+            <marker date="1516389021755" expanded="true" signature="13253:13288" ph="SELECT nom F... _pays" />
+            <marker date="1516389021755" expanded="true" signature="13373:13410" ph="select nom f... _marque" />
           </folding>
         </state>
       </provider>
@@ -631,32 +770,36 @@
         <state relative-caret-position="3582">
           <caret line="199" column="0" lean-forward="true" selection-start-line="199" selection-start-column="0" selection-end-line="199" selection-end-column="0" />
           <folding>
-            <marker date="1516380229514" expanded="true" signature="266:466" ph="SELECT _prod... _produit" />
-            <marker date="1516380229514" expanded="true" signature="4815:4964" ph="SELECT count... _produit" />
-            <marker date="1516380229514" expanded="true" signature="5056:5144" ph="select id_pr... _produit" />
-            <marker date="1516380229514" expanded="true" signature="5344:5432" ph="select id_pr... _produit" />
-            <marker date="1516380229514" expanded="true" signature="5555:5776" ph="select _prod... _produit" />
-            <marker date="1516380229514" expanded="true" signature="5843:5932" ph="select pays _payscommercialiseproduit" />
-            <marker date="1516380229514" expanded="true" signature="6013:6112" ph="select id_in... _ingredientcontenusproduit" />
-            <marker date="1516380229514" expanded="true" signature="6185:6312" ph="select id_ad... _additif" />
-            <marker date="1516380229514" expanded="true" signature="6363:6460" ph="select url, _reference" />
-            <marker date="1516380229514" expanded="true" signature="6559:6651" ph="select ingre... _ingredient" />
-            <marker date="1516380229514" expanded="true" signature="6789:6914" ph="select id_in... _ingredientcontenusingredient" />
-            <marker date="1516380229514" expanded="true" signature="7523:7566" ph="SELECT count... _produit" />
-            <marker date="1516380229514" expanded="true" signature="7716:8136" ph="INSERT INTO openfoodfacts._produit... " />
-            <marker date="1516380229514" expanded="true" signature="10543:10597" ph="SELECT * FRO... _marque" />
-            <marker date="1516380229514" expanded="true" signature="10668:10711" ph="INSERT INTO openfoodfacts._marque... " />
-            <marker date="1516380229514" expanded="true" signature="10977:11029" ph="select count... _pays" />
-            <marker date="1516380229514" expanded="true" signature="11090:11131" ph="INSERT INTO openfoodfacts._pays... " />
-            <marker date="1516380229514" expanded="true" signature="11221:11284" ph="INSERT INTO openfoodfacts._payscommercialiseproduit... " />
-            <marker date="1516380229514" expanded="true" signature="11414:11476" ph="select * fro... _additif" />
-            <marker date="1516380229514" expanded="true" signature="11551:11597" ph="INSERT INTO openfoodfacts._additif... " />
-            <marker date="1516380229514" expanded="true" signature="11675:11754" ph="INSERT INTO openfoodfacts._additifcontenus... " />
-            <marker date="1516380229514" expanded="true" signature="11890:11957" ph="delete * fro... " />
-            <marker date="1516380229514" expanded="true" signature="12023:12059" ph="SELECT * FRO... _additif" />
-            <marker date="1516380229514" expanded="true" signature="12141:12202" ph="select ingre... _ingredient" />
-            <marker date="1516380229514" expanded="true" signature="12285:12320" ph="SELECT nom F... _pays" />
-            <marker date="1516380229514" expanded="true" signature="12405:12442" ph="select nom f... _marque" />
+            <marker date="1516389021755" expanded="true" signature="266:466" ph="SELECT _prod... _produit" />
+            <marker date="1516389021755" expanded="true" signature="4815:4964" ph="SELECT count... _produit" />
+            <marker date="1516389021755" expanded="true" signature="5056:5144" ph="select id_pr... _produit" />
+            <marker date="1516389021755" expanded="true" signature="5344:5432" ph="select id_pr... _produit" />
+            <marker date="1516389021755" expanded="true" signature="5555:5776" ph="select _prod... _produit" />
+            <marker date="1516389021755" expanded="true" signature="5843:5932" ph="select pays _payscommercialiseproduit" />
+            <marker date="1516389021755" expanded="true" signature="6013:6112" ph="select id_in... _ingredientcontenusproduit" />
+            <marker date="1516389021755" expanded="true" signature="6185:6312" ph="select id_ad... _additif" />
+            <marker date="1516389021755" expanded="true" signature="6363:6460" ph="select url, _reference" />
+            <marker date="1516389021755" expanded="true" signature="6559:6651" ph="select ingre... _ingredient" />
+            <marker date="1516389021755" expanded="true" signature="6789:6914" ph="select id_in... _ingredientcontenusingredient" />
+            <marker date="1516389021755" expanded="true" signature="7523:7566" ph="SELECT count... _produit" />
+            <marker date="1516389021755" expanded="true" signature="7733:8153" ph="INSERT INTO openfoodfacts._produit... " />
+            <marker date="1516389021755" expanded="true" signature="8172:8605" ph="INSERT INTO openfoodfacts._produit... " />
+            <marker date="1516389021755" expanded="true" signature="11066:11120" ph="SELECT count... _marque" />
+            <marker date="1516389021755" expanded="true" signature="11191:11234" ph="INSERT INTO openfoodfacts._marque... " />
+            <marker date="1516389021755" expanded="true" signature="11619:11671" ph="SELECT count... _pays" />
+            <marker date="1516389021755" expanded="true" signature="11732:11773" ph="INSERT INTO openfoodfacts._pays... " />
+            <marker date="1516389021755" expanded="true" signature="11863:11926" ph="INSERT INTO openfoodfacts._payscommercialiseproduit... " />
+            <marker date="1516389021755" expanded="true" signature="12056:12118" ph="SELECT count... _additif" />
+            <marker date="1516389021755" expanded="true" signature="12193:12239" ph="INSERT INTO openfoodfacts._additif... " />
+            <marker date="1516389021755" expanded="true" signature="12317:12396" ph="INSERT INTO openfoodfacts._additifcontenus... " />
+            <marker date="1516389021755" expanded="true" signature="12539:12614" ph="delete from openfoodfacts._additifcontenus... " />
+            <marker date="1516389021755" expanded="true" signature="12639:12724" ph="delete from openfoodfacts._ingredientcontenusproduit... " />
+            <marker date="1516389021755" expanded="true" signature="12749:12833" ph="delete from openfoodfacts._payscommercialiseproduit... " />
+            <marker date="1516389021755" expanded="true" signature="12858:12925" ph="delete * fro... " />
+            <marker date="1516389021755" expanded="true" signature="12991:13027" ph="SELECT * FRO... _additif" />
+            <marker date="1516389021755" expanded="true" signature="13109:13170" ph="select ingre... _ingredient" />
+            <marker date="1516389021755" expanded="true" signature="13253:13288" ph="SELECT nom F... _pays" />
+            <marker date="1516389021755" expanded="true" signature="13373:13410" ph="select nom f... _marque" />
           </folding>
         </state>
       </provider>
@@ -721,32 +864,36 @@
         <state relative-caret-position="3582">
           <caret line="199" column="0" lean-forward="true" selection-start-line="199" selection-start-column="0" selection-end-line="199" selection-end-column="0" />
           <folding>
-            <marker date="1516380229514" expanded="true" signature="266:466" ph="SELECT _prod... _produit" />
-            <marker date="1516380229514" expanded="true" signature="4815:4964" ph="SELECT count... _produit" />
-            <marker date="1516380229514" expanded="true" signature="5056:5144" ph="select id_pr... _produit" />
-            <marker date="1516380229514" expanded="true" signature="5344:5432" ph="select id_pr... _produit" />
-            <marker date="1516380229514" expanded="true" signature="5555:5776" ph="select _prod... _produit" />
-            <marker date="1516380229514" expanded="true" signature="5843:5932" ph="select pays _payscommercialiseproduit" />
-            <marker date="1516380229514" expanded="true" signature="6013:6112" ph="select id_in... _ingredientcontenusproduit" />
-            <marker date="1516380229514" expanded="true" signature="6185:6312" ph="select id_ad... _additif" />
-            <marker date="1516380229514" expanded="true" signature="6363:6460" ph="select url, _reference" />
-            <marker date="1516380229514" expanded="true" signature="6559:6651" ph="select ingre... _ingredient" />
-            <marker date="1516380229514" expanded="true" signature="6789:6914" ph="select id_in... _ingredientcontenusingredient" />
-            <marker date="1516380229514" expanded="true" signature="7523:7566" ph="SELECT count... _produit" />
-            <marker date="1516380229514" expanded="true" signature="7716:8136" ph="INSERT INTO openfoodfacts._produit... " />
-            <marker date="1516380229514" expanded="true" signature="10543:10597" ph="SELECT * FRO... _marque" />
-            <marker date="1516380229514" expanded="true" signature="10668:10711" ph="INSERT INTO openfoodfacts._marque... " />
-            <marker date="1516380229514" expanded="true" signature="10977:11029" ph="select count... _pays" />
-            <marker date="1516380229514" expanded="true" signature="11090:11131" ph="INSERT INTO openfoodfacts._pays... " />
-            <marker date="1516380229514" expanded="true" signature="11221:11284" ph="INSERT INTO openfoodfacts._payscommercialiseproduit... " />
-            <marker date="1516380229514" expanded="true" signature="11414:11476" ph="select * fro... _additif" />
-            <marker date="1516380229514" expanded="true" signature="11551:11597" ph="INSERT INTO openfoodfacts._additif... " />
-            <marker date="1516380229514" expanded="true" signature="11675:11754" ph="INSERT INTO openfoodfacts._additifcontenus... " />
-            <marker date="1516380229514" expanded="true" signature="11890:11957" ph="delete * fro... " />
-            <marker date="1516380229514" expanded="true" signature="12023:12059" ph="SELECT * FRO... _additif" />
-            <marker date="1516380229514" expanded="true" signature="12141:12202" ph="select ingre... _ingredient" />
-            <marker date="1516380229514" expanded="true" signature="12285:12320" ph="SELECT nom F... _pays" />
-            <marker date="1516380229514" expanded="true" signature="12405:12442" ph="select nom f... _marque" />
+            <marker date="1516389021755" expanded="true" signature="266:466" ph="SELECT _prod... _produit" />
+            <marker date="1516389021755" expanded="true" signature="4815:4964" ph="SELECT count... _produit" />
+            <marker date="1516389021755" expanded="true" signature="5056:5144" ph="select id_pr... _produit" />
+            <marker date="1516389021755" expanded="true" signature="5344:5432" ph="select id_pr... _produit" />
+            <marker date="1516389021755" expanded="true" signature="5555:5776" ph="select _prod... _produit" />
+            <marker date="1516389021755" expanded="true" signature="5843:5932" ph="select pays _payscommercialiseproduit" />
+            <marker date="1516389021755" expanded="true" signature="6013:6112" ph="select id_in... _ingredientcontenusproduit" />
+            <marker date="1516389021755" expanded="true" signature="6185:6312" ph="select id_ad... _additif" />
+            <marker date="1516389021755" expanded="true" signature="6363:6460" ph="select url, _reference" />
+            <marker date="1516389021755" expanded="true" signature="6559:6651" ph="select ingre... _ingredient" />
+            <marker date="1516389021755" expanded="true" signature="6789:6914" ph="select id_in... _ingredientcontenusingredient" />
+            <marker date="1516389021755" expanded="true" signature="7523:7566" ph="SELECT count... _produit" />
+            <marker date="1516389021755" expanded="true" signature="7733:8153" ph="INSERT INTO openfoodfacts._produit... " />
+            <marker date="1516389021755" expanded="true" signature="8172:8605" ph="INSERT INTO openfoodfacts._produit... " />
+            <marker date="1516389021755" expanded="true" signature="11066:11120" ph="SELECT count... _marque" />
+            <marker date="1516389021755" expanded="true" signature="11191:11234" ph="INSERT INTO openfoodfacts._marque... " />
+            <marker date="1516389021755" expanded="true" signature="11619:11671" ph="SELECT count... _pays" />
+            <marker date="1516389021755" expanded="true" signature="11732:11773" ph="INSERT INTO openfoodfacts._pays... " />
+            <marker date="1516389021755" expanded="true" signature="11863:11926" ph="INSERT INTO openfoodfacts._payscommercialiseproduit... " />
+            <marker date="1516389021755" expanded="true" signature="12056:12118" ph="SELECT count... _additif" />
+            <marker date="1516389021755" expanded="true" signature="12193:12239" ph="INSERT INTO openfoodfacts._additif... " />
+            <marker date="1516389021755" expanded="true" signature="12317:12396" ph="INSERT INTO openfoodfacts._additifcontenus... " />
+            <marker date="1516389021755" expanded="true" signature="12539:12614" ph="delete from openfoodfacts._additifcontenus... " />
+            <marker date="1516389021755" expanded="true" signature="12639:12724" ph="delete from openfoodfacts._ingredientcontenusproduit... " />
+            <marker date="1516389021755" expanded="true" signature="12749:12833" ph="delete from openfoodfacts._payscommercialiseproduit... " />
+            <marker date="1516389021755" expanded="true" signature="12858:12925" ph="delete * fro... " />
+            <marker date="1516389021755" expanded="true" signature="12991:13027" ph="SELECT * FRO... _additif" />
+            <marker date="1516389021755" expanded="true" signature="13109:13170" ph="select ingre... _ingredient" />
+            <marker date="1516389021755" expanded="true" signature="13253:13288" ph="SELECT nom F... _pays" />
+            <marker date="1516389021755" expanded="true" signature="13373:13410" ph="select nom f... _marque" />
           </folding>
         </state>
       </provider>
@@ -899,14 +1046,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FoodFact/application/views/ajouter_produit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="37">
-          <caret line="165" column="11" lean-forward="true" selection-start-line="165" selection-start-column="11" selection-end-line="165" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/FoodFact/application/views/produit.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
@@ -915,76 +1054,88 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/FoodFact/application/controllers/Produits.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="638">
+          <caret line="213" column="5" lean-forward="true" selection-start-line="213" selection-start-column="5" selection-end-line="213" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/FoodFact/application/views/modifier_produit.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="65" column="32" lean-forward="true" selection-start-line="65" selection-start-column="32" selection-end-line="65" selection-end-column="32" />
+        <state relative-caret-position="306">
+          <caret line="17" column="59" lean-forward="false" selection-start-line="17" selection-start-column="59" selection-end-line="17" selection-end-column="59" />
           <folding>
-            <marker date="1516380685866" expanded="true" signature="3631:3764" ph="..." />
-            <marker date="1516380685866" expanded="true" signature="3830:3971" ph="..." />
-            <marker date="1516380685866" expanded="true" signature="4042:4200" ph="..." />
-            <marker date="1516380685866" expanded="true" signature="4287:4453" ph="..." />
-            <marker date="1516380685866" expanded="true" signature="4542:4683" ph="..." />
-            <marker date="1516380685866" expanded="true" signature="4758:4895" ph="..." />
-            <marker date="1516380685866" expanded="true" signature="4966:5097" ph="..." />
-            <marker date="1516380685866" expanded="true" signature="5162:5305" ph="..." />
-            <marker date="1516380685866" expanded="true" signature="5382:5519" ph="..." />
-            <marker date="1516380685866" expanded="true" signature="5589:5714" ph="..." />
-            <marker date="1516380685866" expanded="true" signature="5774:5905" ph="..." />
-            <marker date="1516380685866" expanded="true" signature="5970:6108" ph="..." />
-            <marker date="1516380685866" expanded="true" signature="6179:6317" ph="..." />
-            <marker date="1516380685866" expanded="true" signature="6388:6521" ph="..." />
-            <marker date="1516380685866" expanded="true" signature="6588:6713" ph="..." />
-            <marker date="1516380685866" expanded="true" signature="6773:6919" ph="..." />
-            <marker date="1516380685866" expanded="true" signature="7283:7356" ph="..." />
-            <marker date="1516380685866" expanded="true" signature="7474:7556" ph="..." />
-            <marker date="1516380685866" expanded="true" signature="7636:7712" ph="..." />
-            <marker date="1516380685866" expanded="true" signature="7799:7872" ph="..." />
-            <marker date="1516380685866" expanded="true" signature="7934:8022" ph="..." />
+            <marker date="1516388873666" expanded="true" signature="3649:3782" ph="..." />
+            <marker date="1516388873666" expanded="true" signature="3848:3989" ph="..." />
+            <marker date="1516388873666" expanded="true" signature="4060:4218" ph="..." />
+            <marker date="1516388873666" expanded="true" signature="4305:4471" ph="..." />
+            <marker date="1516388873666" expanded="true" signature="4560:4701" ph="..." />
+            <marker date="1516388873666" expanded="true" signature="4776:4913" ph="..." />
+            <marker date="1516388873666" expanded="true" signature="4984:5115" ph="..." />
+            <marker date="1516388873666" expanded="true" signature="5180:5323" ph="..." />
+            <marker date="1516388873666" expanded="true" signature="5400:5537" ph="..." />
+            <marker date="1516388873666" expanded="true" signature="5607:5732" ph="..." />
+            <marker date="1516388873666" expanded="true" signature="5792:5923" ph="..." />
+            <marker date="1516388873666" expanded="true" signature="5988:6126" ph="..." />
+            <marker date="1516388873666" expanded="true" signature="6197:6335" ph="..." />
+            <marker date="1516388873666" expanded="true" signature="6406:6539" ph="..." />
+            <marker date="1516388873666" expanded="true" signature="6606:6731" ph="..." />
+            <marker date="1516388873666" expanded="true" signature="6791:6937" ph="..." />
+            <marker date="1516388873666" expanded="true" signature="7301:7374" ph="..." />
+            <marker date="1516388873666" expanded="true" signature="7492:7574" ph="..." />
+            <marker date="1516388873666" expanded="true" signature="7654:7730" ph="..." />
+            <marker date="1516388873666" expanded="true" signature="7817:7890" ph="..." />
+            <marker date="1516388873666" expanded="true" signature="7952:8040" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FoodFact/application/views/ajouter_produit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="37">
+          <caret line="165" column="11" lean-forward="true" selection-start-line="165" selection-start-column="11" selection-end-line="165" selection-end-column="11" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/FoodFact/application/models/ProductModel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="395">
-          <caret line="239" column="41" lean-forward="true" selection-start-line="239" selection-start-column="41" selection-end-line="239" selection-end-column="41" />
+        <state relative-caret-position="246">
+          <caret line="379" column="77" lean-forward="false" selection-start-line="379" selection-start-column="77" selection-end-line="379" selection-end-column="77" />
           <folding>
-            <marker date="1516380229514" expanded="true" signature="266:466" ph="SELECT _prod... _produit" />
-            <marker date="1516380229514" expanded="true" signature="4815:4964" ph="SELECT count... _produit" />
-            <marker date="1516380229514" expanded="true" signature="5056:5144" ph="select id_pr... _produit" />
-            <marker date="1516380229514" expanded="true" signature="5344:5432" ph="select id_pr... _produit" />
-            <marker date="1516380229514" expanded="true" signature="5555:5776" ph="select _prod... _produit" />
-            <marker date="1516380229514" expanded="true" signature="5843:5932" ph="select pays _payscommercialiseproduit" />
-            <marker date="1516380229514" expanded="true" signature="6013:6112" ph="select id_in... _ingredientcontenusproduit" />
-            <marker date="1516380229514" expanded="true" signature="6185:6312" ph="select id_ad... _additif" />
-            <marker date="1516380229514" expanded="true" signature="6363:6460" ph="select url, _reference" />
-            <marker date="1516380229514" expanded="true" signature="6559:6651" ph="select ingre... _ingredient" />
-            <marker date="1516380229514" expanded="true" signature="6789:6914" ph="select id_in... _ingredientcontenusingredient" />
-            <marker date="1516380229514" expanded="true" signature="7523:7566" ph="SELECT count... _produit" />
-            <marker date="1516380229514" expanded="true" signature="7716:8136" ph="INSERT INTO openfoodfacts._produit... " />
-            <marker date="1516380229514" expanded="true" signature="10543:10597" ph="SELECT * FRO... _marque" />
-            <marker date="1516380229514" expanded="true" signature="10668:10711" ph="INSERT INTO openfoodfacts._marque... " />
-            <marker date="1516380229514" expanded="true" signature="10977:11029" ph="select count... _pays" />
-            <marker date="1516380229514" expanded="true" signature="11090:11131" ph="INSERT INTO openfoodfacts._pays... " />
-            <marker date="1516380229514" expanded="true" signature="11221:11284" ph="INSERT INTO openfoodfacts._payscommercialiseproduit... " />
-            <marker date="1516380229514" expanded="true" signature="11414:11476" ph="select * fro... _additif" />
-            <marker date="1516380229514" expanded="true" signature="11551:11597" ph="INSERT INTO openfoodfacts._additif... " />
-            <marker date="1516380229514" expanded="true" signature="11675:11754" ph="INSERT INTO openfoodfacts._additifcontenus... " />
-            <marker date="1516380229514" expanded="true" signature="11890:11957" ph="delete * fro... " />
-            <marker date="1516380229514" expanded="true" signature="12023:12059" ph="SELECT * FRO... _additif" />
-            <marker date="1516380229514" expanded="true" signature="12141:12202" ph="select ingre... _ingredient" />
-            <marker date="1516380229514" expanded="true" signature="12285:12320" ph="SELECT nom F... _pays" />
-            <marker date="1516380229514" expanded="true" signature="12405:12442" ph="select nom f... _marque" />
+            <marker date="1516389021755" expanded="true" signature="266:466" ph="SELECT _prod... _produit" />
+            <marker date="1516389021755" expanded="true" signature="4815:4964" ph="SELECT count... _produit" />
+            <marker date="1516389021755" expanded="true" signature="5056:5144" ph="select id_pr... _produit" />
+            <marker date="1516389021755" expanded="true" signature="5344:5432" ph="select id_pr... _produit" />
+            <marker date="1516389021755" expanded="true" signature="5555:5776" ph="select _prod... _produit" />
+            <marker date="1516389021755" expanded="true" signature="5843:5932" ph="select pays _payscommercialiseproduit" />
+            <marker date="1516389021755" expanded="true" signature="6013:6112" ph="select id_in... _ingredientcontenusproduit" />
+            <marker date="1516389021755" expanded="true" signature="6185:6312" ph="select id_ad... _additif" />
+            <marker date="1516389021755" expanded="true" signature="6363:6460" ph="select url, _reference" />
+            <marker date="1516389021755" expanded="true" signature="6559:6651" ph="select ingre... _ingredient" />
+            <marker date="1516389021755" expanded="true" signature="6789:6914" ph="select id_in... _ingredientcontenusingredient" />
+            <marker date="1516389021755" expanded="true" signature="7523:7566" ph="SELECT count... _produit" />
+            <marker date="1516389021755" expanded="true" signature="7733:8153" ph="INSERT INTO openfoodfacts._produit... " />
+            <marker date="1516389021755" expanded="true" signature="8172:8605" ph="INSERT INTO openfoodfacts._produit... " />
+            <marker date="1516389021755" expanded="true" signature="11066:11120" ph="SELECT count... _marque" />
+            <marker date="1516389021755" expanded="true" signature="11191:11234" ph="INSERT INTO openfoodfacts._marque... " />
+            <marker date="1516389021755" expanded="true" signature="11619:11671" ph="SELECT count... _pays" />
+            <marker date="1516389021755" expanded="true" signature="11732:11773" ph="INSERT INTO openfoodfacts._pays... " />
+            <marker date="1516389021755" expanded="true" signature="11863:11926" ph="INSERT INTO openfoodfacts._payscommercialiseproduit... " />
+            <marker date="1516389021755" expanded="true" signature="12056:12118" ph="SELECT count... _additif" />
+            <marker date="1516389021755" expanded="true" signature="12193:12239" ph="INSERT INTO openfoodfacts._additif... " />
+            <marker date="1516389021755" expanded="true" signature="12317:12396" ph="INSERT INTO openfoodfacts._additifcontenus... " />
+            <marker date="1516389021755" expanded="true" signature="12539:12614" ph="delete from openfoodfacts._additifcontenus... " />
+            <marker date="1516389021755" expanded="true" signature="12639:12724" ph="delete from openfoodfacts._ingredientcontenusproduit... " />
+            <marker date="1516389021755" expanded="true" signature="12749:12833" ph="delete from openfoodfacts._payscommercialiseproduit... " />
+            <marker date="1516389021755" expanded="true" signature="12858:12925" ph="delete * fro... " />
+            <marker date="1516389021755" expanded="true" signature="12991:13027" ph="SELECT * FRO... _additif" />
+            <marker date="1516389021755" expanded="true" signature="13109:13170" ph="select ingre... _ingredient" />
+            <marker date="1516389021755" expanded="true" signature="13253:13288" ph="SELECT nom F... _pays" />
+            <marker date="1516389021755" expanded="true" signature="13373:13410" ph="select nom f... _marque" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FoodFact/application/controllers/Produits.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="198" column="14" lean-forward="false" selection-start-line="198" selection-start-column="14" selection-end-line="198" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>

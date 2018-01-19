@@ -227,7 +227,7 @@ class productModel extends CI_Model {
 	public function insertIngr($tb) {
 	}
 
-	public function ajoutProduit($crit, $pays, $addi, $ingrm,$id_ori) {
+	public function ajoutProduit($crit, $pays, $addi, $ingrm, $id_ori = null) {
 		$basereq = "INSERT INTO openfoodfacts._produit(created_t,last_modified_t,product_name,brands,serving_size,nutrition_grade_fr,energy_100g,fat_100g,satured_fat_100g,trans_fat_100g,cholesterol_100g,carbohydrates_100g,sugars_100g,fibers_100g,proteins_100g,salt_100g,sodium_100g,vitamin_a_100g,vitamin_c_100g,calcium_100g,iron_100g,nutrition_score_fr_100g) VALUES(now(),now(),?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) RETURNING id_produit;";
 		$modifreq = "INSERT INTO openfoodfacts._produit(id_produit,created_t,last_modified_t,product_name,brands,serving_size,nutrition_grade_fr,energy_100g,fat_100g,satured_fat_100g,trans_fat_100g,cholesterol_100g,carbohydrates_100g,sugars_100g,fibers_100g,proteins_100g,salt_100g,sodium_100g,vitamin_a_100g,vitamin_c_100g,calcium_100g,iron_100g,nutrition_score_fr_100g) VALUES(?,now(),now(),?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) RETURNING id_produit;";
 
@@ -375,6 +375,9 @@ class productModel extends CI_Model {
 	}
 
 	public function enleverProduit($id_produit) {
+		$this->db->query("delete from openfoodfacts._additifcontenus where id_produit = '$id_produit';");
+		$this->db->query("delete from openfoodfacts._ingredientcontenusproduit where id_produit = '$id_produit';");
+		$this->db->query("delete from openfoodfacts._payscommercialiseproduit where id_produit = '$id_produit';");
 		$this->db->query("delete from openfoodfacts._produit where id_produit = '$id_produit';");
 	}
 
