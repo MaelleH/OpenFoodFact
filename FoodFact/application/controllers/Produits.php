@@ -92,10 +92,10 @@ class Produits extends CI_Controller {
 		$this->form_validation->set_rules('nom', 'Nom', 'required');
 
 		if ($this->form_validation->run() == FALSE) {
-			$data['listeAdd']=$this->productModel->listeAdd();
-			$data['listePays']=$this->productModel->listePays();
-			$data['listeIng']=$this->productModel->listeIng();
-			$data['listeMarque']=$this->productModel->listeMarque();
+			$data['listeAdd'] = $this->productModel->listeAdd();
+			$data['listePays'] = $this->productModel->listePays();
+			$data['listeIng'] = $this->productModel->listeIng();
+			$data['listeMarque'] = $this->productModel->listeMarque();
 
 			$this->load->view('ajouter_produit', $data);
 		} else {
@@ -125,14 +125,14 @@ class Produits extends CI_Controller {
 			$pays = (array)$this->input->post('pays');
 			$additifsBrut = (array)$this->input->post('additifs');
 			$additifs = [];
-			foreach($additifsBrut as $additif) {
+			foreach ($additifsBrut as $additif) {
 				$additif = explode(" - ", $additif);
 				$additifs[] = ['id_additif' => $additif[0], 'nom' => $additif[1]];
 			}
 			$ingredients = (array)$this->input->post('ingredients');
 
-			$this->productModel->ajoutProduit($produit, $pays, $additifs, $ingredients);
-			//redirect();
+			$id_produit = $this->productModel->ajoutProduit($produit, $pays, $additifs, $ingredients);
+			redirect('/produits/consulter/' . $id_produit);
 		}
 	}
 
@@ -153,10 +153,10 @@ class Produits extends CI_Controller {
 		if ($this->form_validation->run() == FALSE) {
 			$data = $produit['product'];
 
-			$data['listeAdd']=$this->productModel->listeAdd();
-			$data['listePays']=$this->productModel->listePays();
-			$data['listeIng']=$this->productModel->listeIng();
-			$data['listeMarque']=$this->productModel->listeMarque();
+			$data['listeAdd'] = $this->productModel->listeAdd();
+			$data['listePays'] = $this->productModel->listePays();
+			$data['listeIng'] = $this->productModel->listeIng();
+			$data['listeMarque'] = $this->productModel->listeMarque();
 
 			$data['countries'] = $produit['countries'];
 
@@ -201,14 +201,15 @@ class Produits extends CI_Controller {
 			$pays = (array)$this->input->post('pays');
 			$additifsBrut = (array)$this->input->post('additifs');
 			$additifs = [];
-			foreach($additifsBrut as $additif) {
+			foreach ($additifsBrut as $additif) {
 				$additif = explode(" - ", $additif);
 				$additifs[] = ['id_additif' => $additif[0], 'nom' => $additif[1]];
 			}
 			$ingredients = (array)$this->input->post('ingredients');
 
 			$this->productModel->enleverProduit($id_produit);
-			$this->productModel->ajoutProduit($produit, $pays, $additifs, $ingredients, $id_produit);
+			$id_produit = $this->productModel->ajoutProduit($produit, $pays, $additifs, $ingredients, $id_produit);
+			redirect('/produits/consulter/' . $id_produit);
 		}
 	}
 
@@ -238,7 +239,8 @@ class Produits extends CI_Controller {
 				$arr = array_filter($_POST['additifs']);
 				if (!empty($arr)) {
 					$crit['additifsAvoir'] = $arr;
-				}			}
+				}
+			}
 			if ($_POST['ingredients'] != NULL) {
 				$crit['ingredients'] = $_POST['ingredients'];
 			}

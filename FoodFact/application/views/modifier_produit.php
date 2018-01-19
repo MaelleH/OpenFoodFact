@@ -78,8 +78,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 									<option value="a" <?php if (strtolower($nutrition_grade_fr) == 'a') echo 'selected="selected"'; ?>>A</option>
 									<option value="b" <?php if (strtolower($nutrition_grade_fr) == 'b') echo 'selected="selected"'; ?>>B</option>
 									<option value="c" <?php if (strtolower($nutrition_grade_fr) == 'c') echo 'selected="selected"'; ?>>C</option>
-									<option value="d" <?php if (strtolower($nutrition_grade_fr) == 'e') echo 'selected="selected"'; ?>>D</option>
-									<option value="e" <?php if (strtolower($nutrition_grade_fr) == 'f') echo 'selected="selected"'; ?>>E</option>
+									<option value="d" <?php if (strtolower($nutrition_grade_fr) == 'd') echo 'selected="selected"'; ?>>D</option>
+									<option value="e" <?php if (strtolower($nutrition_grade_fr) == 'e') echo 'selected="selected"'; ?>>E</option>
 								</select>
 							</td>
 						</tr>
@@ -158,89 +158,76 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</form>
 </div>
 
-<datalist id="liste_marque">
-	<?php foreach($listeMarque as $marque) : ?>
-		<option><?php echo $marque['nom'] ?></option>
-	<?php endforeach;?>        
-</datalist>  
-
-<datalist id="liste_pays">
-	<?php foreach($listePays as $pays) : ?>
-		<option><?php echo $pays['nom'] ?></option>
-	<?php endforeach;?>        
+<datalist id="liste_additifs">
+	<?php foreach ($listeAdd as $add) : ?>
+        <option><?php echo $add['id_additif']; ?> - <?php echo $add['nom'] ?></option>
+	<?php endforeach; ?>
 </datalist>
 
-<datalist id="ingredients">
-	<?php foreach($listeIng as $ing): ?>
-		<option><?php echo $ing['ingredients_text']; ?></option>
+<datalist id="liste_marque">
+	<?php foreach ($listeMarque as $marque) : ?>
+        <option><?php echo $marque['nom'] ?></option>
+	<?php endforeach; ?>
+</datalist>
+
+<datalist id="liste_pays">
+	<?php foreach ($listePays as $pays) : ?>
+        <option><?php echo $pays['nom'] ?></option>
+	<?php endforeach; ?>
+</datalist>
+
+<datalist id="liste_ingredients">
+	<?php foreach ($listeIng as $ing) : ?>
+        <option><?php echo $ing['nom'] ?></option>
 	<?php endforeach; ?>
 </datalist>
 
 <script>
-	function ajouterIngredient(idActuel) {
-		var liste = document.getElementById('liste' + idActuel);
-		var id = liste.childNodes.length + '';
-		if (idActuel !== '') {
-			id = idActuel + '_' + id;
-		}
-		var ingredient = document.createElement('li');
-		ingredient.id = 'ingredient' + id;
-		ingredient.innerHTML = '<div class="row"><div class="col-5"><input class="form-control" type="text" id="ingredient" list="ingredients" name="ingredients[' + id.replace(/_/g, '][') + ']"></div><div class="col-7"><button type="button" class="btn btn-danger" onclick="enleverIngredient(\'' + id + '\')">−</button><button type="button" class="btn btn-success ml-2" onclick="ajouterIngredient(\'' + id + '\')">+</button></div></div><ul class="list-without-dots" id="liste' + id +'"</ul>';
-		document.getElementById('liste' + idActuel).appendChild(ingredient);
-	}
+    function ajouterIngredient(idActuel) {
+        var liste = document.getElementById('liste' + idActuel);
+        var id = liste.childNodes.length + '';
+        if (idActuel !== '') {
+            id = idActuel + '_' + id;
+        }
+        var ingredient = document.createElement('li');
+        ingredient.id = 'ingredient' + id;
+        ingredient.innerHTML = '<div class="row"><div class="col-5"><input class="form-control" type="text" id="ingredient" list="liste_ingredients" name="ingredients[' + id.replace(/_/g, '][') + ']"></div><div class="col-7"><button type="button" class="btn btn-danger" onclick="enleverIngredient(\'' + id + '\')">−</button><button type="button" class="btn btn-success ml-2" onclick="ajouterIngredient(\'' + id + '\')">+</button></div></div><ul class="list-without-dots" id="liste' + id + '"</ul>';
+        document.getElementById('liste' + idActuel).appendChild(ingredient);
+    }
 
-	function enleverIngredient(id) {
-		document.getElementById('ingredient' + id).remove();
-	}
+    function enleverIngredient(id) {
+        document.getElementById('ingredient' + id).remove();
+    }
 
-	function ajouterInputAdditif() {
-		var c = document.getElementById('additifs');
-		if (c.lastElementChild == null || c.lastElementChild.firstChild == null || c.lastElementChild.firstChild.value !== '') {
-			var div = document.createElement('div');
-			div.className = "form-group";
-			var input = document.createElement('input');
-			input.type = 'text';
-			input.name = 'additifs[]';
-			input.className = 'form-control';
-			input.onchange = function () {
-				if (this.value === '') {
-					this.parentElement.remove();
-				}
-			};
-			div.appendChild(input);
-			c.appendChild(div);
-		} else {
-			alert('Veuillez remplir le champ actuel avant d’en ajouter un autre !');
-		}
-	}
+    function ajouterInputAdditif() {
+        var c = document.getElementById('additifs');
+        if (c.lastElementChild == null || c.lastElementChild.firstChild == null || c.lastElementChild.firstChild.value !== '') {
+            var div = document.createElement('div');
+            div.className = "form-group";
+            div.innerHTML = '<input type="text" class="form-control" name="additifs[]" list="liste_additifs" onchange="deleteme(this)"/>';
+            c.appendChild(div);
+        } else {
+            alert('Veuillez remplir le champ actuel avant d’en ajouter un autre !');
+        }
+    }
 
-	function ajouterInputPays() {
-		var c = document.getElementById('pays');
-		if (c.lastElementChild == null || c.lastElementChild.firstChild == null || c.lastElementChild.firstChild.value !== '') {
-			var div = document.createElement('div');
-			div.className = "form-group";
-			var input = document.createElement('input');
-			input.type = 'text';
-			input.name = 'pays[]';
-			input.list = "liste_pays";
-			input.className = 'form-control';
-			input.onchange = function () {
-				if (this.value === '') {
-					this.parentElement.remove();
-				}
-			};
-			div.appendChild(input);
-			c.appendChild(div);
-		} else {
-			alert('Veuillez remplir le champ actuel avant d’en ajouter un autre !');
-		}
-	}
+    function ajouterInputPays() {
+        var c = document.getElementById('pays');
+        if (c.lastElementChild == null || c.lastElementChild.firstChild == null || c.lastElementChild.firstChild.value !== '') {
+            var div = document.createElement('div');
+            div.className = 'form-group';
+            div.innerHTML = '<input type="text" class="form-control" name="pays[]" list="liste_pays" onchange="deleteme(this)"/>';
+            c.appendChild(div);
+        } else {
+            alert('Veuillez remplir le champ actuel avant d’en ajouter un autre !');
+        }
+    }
 
-	function deleteme(e) {
-		if (e.value === '') {
-			e.parentElement.remove();
-		}
-	}
+    function deleteme(e) {
+        if (e.value === '') {
+            e.parentElement.remove();
+        }
+    }
 </script>
 </body>
 </html>
