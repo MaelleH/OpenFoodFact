@@ -227,12 +227,18 @@ class productModel extends CI_Model {
 	public function insertIngr($tb) {
 	}
 
-	public function ajoutProduit($crit, $pays, $addi, $ingr) {
+	public function ajoutProduit($crit, $pays, $addi, $ingrm,$id_ori) {
 		$basereq = "INSERT INTO openfoodfacts._produit(created_t,last_modified_t,product_name,brands,serving_size,nutrition_grade_fr,energy_100g,fat_100g,satured_fat_100g,trans_fat_100g,cholesterol_100g,carbohydrates_100g,sugars_100g,fibers_100g,proteins_100g,salt_100g,sodium_100g,vitamin_a_100g,vitamin_c_100g,calcium_100g,iron_100g,nutrition_score_fr_100g) VALUES(now(),now(),?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) RETURNING id_produit;";
+		$modifreq = "INSERT INTO openfoodfacts._produit(id_produit,created_t,last_modified_t,product_name,brands,serving_size,nutrition_grade_fr,energy_100g,fat_100g,satured_fat_100g,trans_fat_100g,cholesterol_100g,carbohydrates_100g,sugars_100g,fibers_100g,proteins_100g,salt_100g,sodium_100g,vitamin_a_100g,vitamin_c_100g,calcium_100g,iron_100g,nutrition_score_fr_100g) VALUES(?,now(),now(),?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) RETURNING id_produit;";
 
 		$recherche = [];
 		//$recherche[]='now()'; // Le created_t
 		//$recherche[]='now()'; // Le last_modified_t
+
+		if($id_ori!=NULL){
+			$recherche[] = $id_ori;
+		}
+
 		$recherche[] = $crit['nom'];
 		if ($crit['marque'] == "") {
 			$recherche[] = NULL;
@@ -336,8 +342,11 @@ class productModel extends CI_Model {
 			$this->db->query("INSERT INTO openfoodfacts._marque VALUES(?)", $crit['marque']);
 		}
 		//On insert le produit
-
-		$id_produit = $this->db->query($basereq, $recherche)->row_array()['id_produit'];
+		if($id_ori!=NULL){
+			$id_produit = $this->db->query($modifreq, $recherche)->row_array()['id_produit'];
+		}else{
+			$id_produit = $this->db->query($basereq, $recherche)->row_array()['id_produit'];
+		}
 
 		echo("id du produit est : " . $id_produit);
 
@@ -362,7 +371,7 @@ class productModel extends CI_Model {
 		}
 
 
-		return true;
+		return $id_produit;
 	}
 
 	public function enleverProduit($id_produit) {
